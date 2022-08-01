@@ -6,4 +6,8 @@ draft: false
 
 # Hugo on Vercel
 
+hello markdown
+
+**hello hugo**
+
 {{< card "https://github.com/Humble-Xiang/website-card-embed" >}}
