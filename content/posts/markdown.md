@@ -108,8 +108,6 @@ I think I'll use it to format all of my documents from now on.
 2. 有序列表 2
 3. 有序列表 3
 
-
-
 ### 引用
 
 引用的格式是在符号`>`后面书写文字。  
