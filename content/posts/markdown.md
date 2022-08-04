@@ -226,7 +226,6 @@ I think I'll use it to format all of my documents from now on.
 | 小小小机智 |  22  | 看一本机智书 |
 
 
-
 ## 特殊语法
 
 ### 代码块

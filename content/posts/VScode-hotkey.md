@@ -14,8 +14,9 @@ date: 2022-08-02T20:42:08+08:00
 ```
 （整理代码）代码格式化：Shift+Alt+F
 向上或向下移动一行：Alt+Up或Alt+Down
-快速复制一行代码：Shift+Alt+Up或Shift+Alt+Down
+快速复制一行代码：直接Ctrl+C和Ctrl+V，鼠标光标在这行的任意位置处
 快速保存：Ctrl+S
 快速查找：Ctrl+F
 快速替换：Ctrl+H  一次回车替换一次
+撤销操作：Ctrl+Z
 ```
