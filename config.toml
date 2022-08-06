@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "https://mollyxu-blog.vercel.app/"
 # [en, zh-cn, fr, pl, ...] determines default content language
 # [en, zh-cn, fr, pl, ...] 设置默认的语言
 defaultContentLanguage = "zh-cn"
@@ -11,7 +11,7 @@ themesDir = "./themes"
 
 # website title
 # 网站标题
-title = "网站标题"
+title = "Molly Blog"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -79,14 +79,14 @@ enableEmoji = true
         pre = "<i class='fab fa-github fa-fw'></i>"
         post = ""
         name = ""
-        url = ""
+        url = "https://github.com/MollyXu1995"
         title = "GitHub"
         weight = 9
     [languages.zh-cn.params]
       # 网站描述
-      description = "网站描述"
+      description = "等风来，不如追风去。"
       # 网站关键词
-      keywords = ["Theme", "Hugo"]
+      keywords = ["前端", "VUE", "React", "HTML", "CSS", "JavaScript"]
       # 应用图标配置
       [languages.zh-cn.params.app]
         # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
@@ -141,11 +141,11 @@ enableEmoji = true
           # Gravatar 邮箱，用于优先在主页显示的头像
           gravatarEmail = ""
           # 主页显示头像的 URL
-          avatarURL = "/images/avatar.webp"
+          avatarURL = "/images/avatar.jpg"
           # 主页显示的网站标题 (支持 HTML 格式)
-          title = "主页标题"
+          title = "Molly Blog"
           # 主页显示的网站副标题
-          subtitle = "主页副标题"
+          subtitle = "等风来，不如追风去。"
           # 是否为副标题显示打字机动画
           typeit = true
           # 是否显示社交账号
@@ -241,7 +241,7 @@ enableEmoji = true
 [params]
   # website title
   # 网站标题
-  title = "网站标题"
+  title = "Molly Blog"
   # DoIt theme version
   # DoIt 主题版本
   version = "0.2.X"
@@ -259,7 +259,7 @@ enableEmoji = true
   dateFormat = "2006-01-02"
   # website images for Open Graph and Twitter Cards
   # 网站图片, 用于 Open Graph 和 Twitter Cards
-  images = ["/images/avatar.webp"]
+  images = ["/images/avatar.jpg"]
   # enable PWA
   # 开启 PWA 支持
   enablePWA = true
@@ -556,8 +556,8 @@ enableEmoji = true
       # Waline comment config (https://waline.js.org)
       # Waline 评论系统设置 (https://waline.js.org)
       [params.page.comment.waline]
-        enable = false
-        serverURL = ""
+        enable = true
+        serverURL = "https://mollyxu-blog.vercel.app/"
         visitor = false
         emoji = ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
         meta = ['nick', 'mail', 'link']
@@ -671,8 +671,8 @@ enableEmoji = true
       # Publisher info
       # 出版者信息
       [params.page.seo.publisher]
-        name = ""
-        logoUrl = "/images/avatar.webp"
+        name = "MollyXu"
+        logoUrl = "/images/avatar.jpg"
   # Sponsor config
   # 赞助设置
   [params.sponsor]
