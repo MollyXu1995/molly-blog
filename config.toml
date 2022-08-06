@@ -11,7 +11,7 @@ themesDir = "./themes"
 
 # website title
 # 网站标题
-title = "Molly Blog"
+title = "莫莉的个人博客"
 
 # whether to use robots.txt
 # 是否使用 robots.txt
@@ -143,7 +143,7 @@ enableEmoji = true
           # 主页显示头像的 URL
           avatarURL = "/images/avatar.jpg"
           # 主页显示的网站标题 (支持 HTML 格式)
-          title = "Molly Blog"
+          title = "莫莉的个人博客"
           # 主页显示的网站副标题
           subtitle = "等风来，不如追风去。"
           # 是否为副标题显示打字机动画
@@ -159,7 +159,7 @@ enableEmoji = true
           paginate = 7
       # 主页的社交信息设置
       [languages.zh-cn.params.social]
-        GitHub = ""
+        GitHub = "https://github.com/MollyXu1995"
         Linkedin = ""
         Twitter = ""
         Instagram = ""
@@ -179,7 +179,7 @@ enableEmoji = true
         FreeCodeCamp = ""
         Bitbucket = ""
         Stackoverflow = ""
-        Weibo = "xxxx"
+        Weibo = ""
         Odnoklassniki = ""
         VK = ""
         Flickr = ""
@@ -220,7 +220,7 @@ enableEmoji = true
         Gitea = ""
         XMPP = ""
         Matrix = ""
-        Bilibili = "xxxx"
+        Bilibili = ""
         ORCID = ""
         Liberapay = ""
         Ko-Fi = ""
@@ -228,7 +228,7 @@ enableEmoji = true
         Linktree = ""
         QQ = ""
         QQGroup = ""
-        Email = ""
+        Email = "MollyXu1995@gmail.com"
         RSS = true
         # 赞助设置
       [languages.zh-cn.params.sponsor]
@@ -241,7 +241,7 @@ enableEmoji = true
 [params]
   # website title
   # 网站标题
-  title = "Molly Blog"
+  title = "莫莉的个人博客"
   # DoIt theme version
   # DoIt 主题版本
   version = "0.2.X"
@@ -283,7 +283,7 @@ enableEmoji = true
       logo = ""
       # title name
       # 标题名称
-      name = "头部标题"
+      name = "莫莉的个人博客"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       pre = "<i class='far fa-edit fa-fw'></i>"
@@ -557,7 +557,7 @@ enableEmoji = true
       # Waline 评论系统设置 (https://waline.js.org)
       [params.page.comment.waline]
         enable = true
-        serverURL = "https://mollyxu-blog.vercel.app/"
+        serverURL = "https://molly-blog-waline.vercel.app/"
         visitor = false
         emoji = ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
         meta = ['nick', 'mail', 'link']
@@ -820,10 +820,10 @@ enableEmoji = true
 # Author config
 # 作者配置
 [author]
-  name = ""
-  email = ""
+  name = "MollyXu"
+  email = "MollyXu1995@gmail.com"
   link = ""
-  avatar = "/images/avatar.webp"
+  avatar = "/images/avatar.jpg"
   gravatarEmail = ""
 
 # Sitemap config
