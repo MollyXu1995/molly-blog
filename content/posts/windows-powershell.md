@@ -1,6 +1,7 @@
 ---
 title: "常见的命令"
 date: 2022-08-03T07:05:01+08:00
+tags: ['Command-line Tool']
 ---
 ## Windows PowerShell
 ### 简介
