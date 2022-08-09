@@ -38,6 +38,8 @@ DOCTYPE是 document type（文档类型）的缩写。`<!DOCTYPE html>`是H5的*
     <body>…</body>
 </html>
 ```
+>快捷键：`!`回车
+
 ### html标签
 定义HTML文档，这个元素我们浏览器看到后就明白**这是个HTML文档**了，所以你的其他元素要包裹在它里面，这个标签限定了`文档的开始点和结束点`。
 ```html
@@ -217,7 +219,7 @@ meta是*单标签*，用来**描述一个HTML网页文档的属性、关键词�
 ---
 ## 标签之超文本链接
 ### 超链接描述
-HTML使用便签`<a>`来设置超文本链接  
+HTML使用标签`<a>`来设置超文本链接  
 超链接可以是一个字，一个词，一组词，一幅图像，您可以点击这些内容来跳转到新的文档  
 ```html
 <a href="url">链接文本</a> 
@@ -598,11 +600,12 @@ HTML5出现之前，经常把元素按照块级元素和内联级元素区分。
 ---
 ## 参考资料
 
+{{< card "https://developer.mozilla.org/en-US/" >}}
+
 {{< card "https://www.w3school.com.cn/index.html" >}}
 
 {{< card "https://humble-blog.vercel.app/html" >}}
 
-{{< card "http://t.mb5u.com/html/" >}}
 
 
 
