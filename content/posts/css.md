@@ -1,8 +1,7 @@
 ---
-title: "CSS的使用"
+title: "草稿css"
 date: 2022-08-04T16:20:44+08:00
-tags: ['Language']
-series: ['前端学习之旅']
+tags: ['Essay']
 ---
 ## CSS简介、语法
 使用CSS的唯一目的就是**让网页具有美观**一致的页面
