@@ -1,8 +1,7 @@
 ---
-title: "HTML5的使用"
+title: "草稿html"
 date: 2022-08-03T08:04:45+08:00
-tags: ['Language']
-series: ['前端学习之旅']
+tags: ['Essay']
 ---
 ## HTML5的简介
 ### 为什么学习HTML5？
@@ -457,7 +456,7 @@ HTML使用标签`<a>`来设置超文本链接
 			<td>单元格</td>
 			<td>单元格</td>
 		</tr>
-	</table>
+</table>
 ```
 > ***不推荐这么编写属性；后面学习CSS，用CSS编写表格属性。***
 

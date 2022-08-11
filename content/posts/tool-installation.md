@@ -24,5 +24,5 @@ tags: ['Essay']
 使用方便
 ### VSCode安装
 百度搜索`VSCode`，进行下载安装
-### VSCode中文语言包安装
+### VSCode插件
 在VSCode中，扩展——搜索Chinese——点击安装
