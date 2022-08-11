@@ -476,7 +476,7 @@ HTML5 提供了新的语义元素来明确一个Web页面的不同部分:
 
 ## 参考
 {{< card "https://developer.mozilla.org/en-US/" >}}      
-{{< card "https://www.runoob.com/html/html-tables.html/" >}}     
-{{< card "https://www.w3school.com.cn/index.html/" >}}
+{{< card "https://www.runoob.com/html/html-tables.html" >}}     
+{{< card "https://www.w3school.com.cn/index.html" >}}
 
 
