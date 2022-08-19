@@ -11,10 +11,11 @@ HTML5是用来描述网页的一种语言，被称为`超文本标记语言`。�
 - HTML标签  
 **标签是由尖括号包围的关键字**，例如：`<html>`  
 标签有两种表现形式：
-  1. **双标签**，例如：`<html></html>`
-  2. **单标签**，例如：`<img>`
->双标签的第一个标签是开始标签，第二个标签是结束标签  
-<标签>内容</标签>
+  - **双标签**，例如：`<html></html>`
+  - **单标签**，例如：`<img>`
+>1、双标签的第一个标签是开始标签，第二个标签是结束标签  
+2、<标签>内容</标签>  
+> 3、属性写在开始标签
 
 
 ## HTML基础
@@ -26,26 +27,27 @@ HTML5是用来描述网页的一种语言，被称为`超文本标记语言`。�
     <meta charset="UTF-8">       <!--元数据 网页编码格式为utf-8-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <title>Document</title>      <!--文档的标题-->
+    <title>Document</title>      文档的标题
 
     属性设置、链接其他文档
     不会真正作为内容显示给用户
 
 </head>              
-<body>                 <!--内容-->  
+<body>                   
     
     用户可见的页面内容
 
 </body>
 </html>
 ```
->快捷键：`!`回车
+>vscode快捷键：`!`回车
 
 ### 元素
-
+元素和属性：
 - 元素属性包含元素的额外信息，这些信息不会出现在实际的内容中；  
 - HTML属性大致分为 3 类：全局属性(id、class、style、title)、某一类元素属性、某一个元素属性。  
-- HTML **属性写在 HTML 元素开始标签中**，与标签名用空格分隔，然后就是我们元素的属性，属性一般为属性名=“属性值”，属性值必须用双引号包裹，也有单独出现的属性如 input 的布尔属性 disabled。
+- `属性写在 HTML 元素开始标签中`，与标签名用空格分隔。标签上可以同时存在多个属性，没有顺序之分。
+- 属性一般为 `属性名=“属性值”`，属性值必须用双引号包裹，也有单独出现的属性如 input 的布尔属性 disabled。
 - 大多数HTML元素可以嵌套（HTML元素可以包含其他HTML元素）
 
 #### 块级元素、行内元素(内联元素)
@@ -59,21 +61,28 @@ HTML5是用来描述网页的一种语言，被称为`超文本标记语言`。�
 | 一般块级元素可以包含行内元素和其他块级元素 | 一般内联元素包含内联元素但不包含块级元素 |
 
 
-> 常见块级元素：div、form、h1~h6、hr、p、table、ul 等    
-常见行内元素：a、em、i、span、strong 等  
-行内块级元素：button、img、input 等  
+> 常见块级元素：  
+div、p、h1~h6、ul、li、dl、dt、dd、  
+form、hr、table、   
+ >
+ >
+>常见行内元素：  
+a、span、em、i、strong、 
+>
+>
+>行内块级元素：button、img、input、  
  （特点：不换行、能够识别宽高）
 
 #### 区块布局
 HTML 可以通过 `<div>` 和 `<span>`将元素组合起来。
 
-1. `<div>` 元素是块级元素，包裹分隔块级元素
+1. `<div>` 元素是块级元素，可包裹分隔其他块级元素
 
     - 没有特定的含义。可用于组合其他 HTML 元素的容器
     - 与 CSS 一同使用，可用于对大的内容块设置样式属性
     - 常见的用途是文档布局
 
-2. `<span>` 元素是内联元素，包裹分隔行内元素
+2. `<span>` 元素是行内元素，可包裹分隔其他行内元素
 
     - 没有特定的含义。可用于组合文档中的行内元素
     - 与 CSS 一同使用，可用于为部分文本设置样式属性
@@ -112,7 +121,6 @@ JavaScript</div>
 
 #### 基础元素
 - 标题  
-在标签中添加属性：align="left|center|right"默认居左
 ```html
 <h1>一级标题</h1>     <!--定义最大的标题-->
 <h2>二级标题</h2>
@@ -135,31 +143,38 @@ JavaScript</div>
 ```
 - 文本格式化
 ```html
-<em>定义着重文字</em>
-<b>定义粗体文本</b>
-<i>定义斜体字</i>
-<strong>定义加重语气</strong>
-<del>定义删除字</del>
-<span>元素没有特定的含义</span>  
+<b>加粗</b>           
+<u>下划线</u>
+<i>倾斜</i>
+<s>删除线</s>
 
-<!--通常标签 <strong> 替换加粗标签 <b> 来使用；
-            <em> 替换 <i>标签使用；-->
+<!--语义：具有突出重要性的强调语境 -->
+<strong>加粗</strong>
+<ins>下划线</ins>
+<em>倾斜</em>
+<del>删除线</del>
 ```
 - 超链接
 ```html
 <a href="地址">链接文本</a>               
 <!--"链接文本"不必一定是文本。图片或其他HTML元素都可以成为链接-->
 
-<a href="地址" target="_blank"></a>     
- <!--target属性，定义被链接的文档在何处被打开-->
+<a href="https://www.baidu.com/" target="_blank">百度一下</a>     
+ <!--target属性，目标网页的打开形式
+         _blank 在新窗口中跳转（保留原网页）
+         _self 默认值，在当前窗口中跳转（覆盖原网页）-->
 ```
 
 - 图像
 ```html
 <img src="图片地址" alt="替换文本" title="鼠标悬停提示信息" width="50px" height="40px"/>
+
+<!-- 一般只设置width，同时设置图片会变形 -->
+<!-- title属性不仅可以用于图片标签，还可以用于其他标签 -->
 ```
 
-- 列表
+#### 列表
+- 有序列表
 ```html
 <ol type="A">              <!--ol标签定义 有序列表-->
     <li>苹果</li>
@@ -167,6 +182,8 @@ JavaScript</div>
     <li>香蕉</li>
 </ol>
 ```
+
+- 无序列表
 ```html
 <ul type="square">         <!--ul标签定义 无序列表-->
     <li>椅子</li>          
@@ -174,18 +191,50 @@ JavaScript</div>
     <li>电视机</li>
 </ul>
 ```
-> 列表可以进行嵌套  
-无序列表 常见应用场景：导航效果
+
+- 自定义列表
+```html
+<dl>         <!--dl标签定义 自定义列表-->
+    <dt>家具家电</dt>     <!--dt标签定义 列表的主题-->     
+    <dd>沙发</dd>       
+    <dd>电视机</dd>       <!--dd标签定义 列表项-->
+    <dd>冰箱</dd>         <!--dd默认显示缩进效果-->
+    <dd>衣柜</dd>
+</dl>
+```
+
+> 1、ul ol标签，只允许包含 li  标签；dl标签，只允许包含dt/dd标签   
+2、li dt dd 标签可以包含任何内容  
+3、列表可以进行嵌套  
+>
+>应用场景
+>- 无序列表：网页导航  
+>- 自定义列表：网页底部
+
+
+
+
 
 
 #### 表格
-表格（table）、表头（th）、行（tr）、列/单元格（td）  
+|名称|标签|说明|
+|:--|:--|:--|
+|表格|table|表格整体|
+|标题|caption|写在table标签内部，默认顶部居中|
+|行|tr|包裹th、td|
+|表头|th|默认加粗居中|
+|列/单元格|td|内容|
+|水平合并|colspan||
+|垂直合并 |rowspan||
+
+表格样式效果：用`CSS`设置
 
 ```html
-<!--3行2列 成绩表-->    
+<!--3行2列 成绩单-->    
 <!--border：设置表格的边框-->
 
 <table border="1" width="400px" height="200px">
+    <caption>同学成绩单</caption>
 		<tr>
 			<th>姓名</th>                   
 			<th>成绩</th>
@@ -194,7 +243,7 @@ JavaScript</div>
 			<td>张三</td>
 			<td>98</td>
 		</tr>
-        <tr>
+    <tr>
 			<td>李四</td>
 			<td>76</td>
 		</tr>
@@ -230,11 +279,16 @@ JavaScript</div>
 ```
 
 #### 表单
-在Web网页中用来给用户填写信息，从而能采集到用户信息，使网页具有交互的功能。如登陆注册、搜索框
+在Web网页中用来给用户填写信息，从而能采集到用户信息，使网页具有交互的功能。如登陆、注册、搜索框
+
+```html
+<form> </form>
+```
+
 | 属性名称 | 描述 |
 | :-- | :--|
 | name | 表单的名称 |
-| action | 表单数据接受地址 |
+| action | 表单数据接收地址 |
 | target | 打开 url 的方式，_blank 新窗口，_self 当前窗口 |
 | method | 数据传送方法，get:通过 url 地址传送参数,网址中可以看到数据，post:后台传送 |
 | enctype |	发送前如何将数据进行编码，仅与 method=“post"配对使用 |
@@ -242,45 +296,73 @@ JavaScript</div>
 | multipart/form-data | 不对发送字符进行编码，在上传文件时，必须设置 |
 | text/plain | 纯文本方式，仅将空格转为”+“号，不对特殊字符编码 |
 
-表单域input的属性
+
+- 表单域input的属性
+
 | 属性名称 | 描述 |
 | :-- | :-- |
 | type | 元素的类型，如 text 文本框、radio 单选按钮、select 下拉框等 |
-| name | 元素的名称，主要用于服务端数据传送 |
+| name | 元素的名称，主要用于服务端数据传送；对单选框有分组功能，有相同name属性值的单选框为一组，一组中只能有一个被选中 |
+|placeholder|占位符，提示用户输入内容的文本|
+| checked | 默认先选中的选项|
 | value	| 元素的默认值，可当占位符 |
+| multiple	| type属性文件选择中，用于多文件选择 |
 | size | 以字符计算的元素可见宽度，注意，不是像素或百分比 |
 | maxlength | 元素允许的最大字符长度 |
 | disabled | 禁用该控件，此时，既不能选择，也不能点击 |
 | readonly | 该控件字段内容只读，不允许修改 |
 
+
+- type属性值  
+input标签通过type属性值的不同，展示不同效果
+```html
+<input type="">
+```
+|标签| type属性值 | 说明 |
+|:--| :-- | :-- |
+|input|text|文本框，输入单行文本|
+|input|password|密码框，用于输入密码|
+|input|radio|单选框，多选一|
+|input|checkbox|多选框，多选多|
+|input|file|文件选择，用于之后上传文件|
+|input|submit|提交按钮，用于提交|
+|input|reset|重置按钮，用于重置|
+|input|button|普通按钮，默认无功能，之后配合js添加功能|
+
+
 ```html
 <!-- 单行文本 密码 -->
-<form>
-用户名: <input type="text" name="user"><br>
-密码: <input type="password" name="password">
+<form action="#">
+用户名: <input type="text" name="user" placeholder="请输入用户名">     
+  密码: <input type="password" name="password">
 </form>
 
 <!-- 单选按钮 -->
-<input type="radio" name="sex" value="male">男<br>
-<input type="radio" name="sex" value="female">女
+<input type="radio" name="sex" value="male">男
+<input type="radio" name="sex" value="female" checked>女
+<!-- 用label标签，文字同按钮有同样效果，也可直接点击文字选择 -->
+<label><input type="radio" name="sex" value="male">男</label>
+
+
 <!-- 复选框 -->
-<input type="checkbox" name="vehicle" value="Bike">我喜欢自行车<br>
+<input type="checkbox" name="vehicle" value="Bike">我喜欢自行车
 <input type="checkbox" name="vehicle" value="Car">我喜欢小汽车
 
 <!-- 自定义按钮 -->
-<input type="button" value="点击" />
+<input type="button" value="请点击" />
 <!-- 提交按钮 -->
-<input type="submit" value="提交" />
+<input type="submit" value="请提交" />
 <!-- 重置按钮 -->
-<input type="reset" value="重置" />
+<input type="reset" value="请重置" />
 
 <!-- 图像按钮 -->
 <input type="image" src="url" alt="图片说明" />
 
+
 <!-- 下拉框 -->
-<select name="address" id="address>
-  <option value="bj" selected>北京</option>
-  <option value="">上海</option>
+<select name="address" id="address">
+  <option value="bj">北京</option>
+  <option value="" selected>上海</option>
   <option value="">天津</option>
   <option value="">广州</option>
   <option value="">深圳</option>
@@ -336,21 +418,11 @@ JavaScript</div>
 ```
 
 #### 媒体
-- 视频 
-
-| 属性名称 | 描述 |  
-|  :--- | :-- |  
-|  autoplay  | 自动播放 | 
-|  controls  | 向用户显示控件，如播放按钮 |
-| height | 高度 |
-| width | 宽度 |
-| loop | 循环播放 |
-| muted | 静音 |
-| poster | 未开始播放时显示的图像 |
-| preload | 如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性 |
-| src | 地址 |
-
+- 视频   
+视频标签目前支持三种格式：MP4、WebM、Ogg
 ```html
+<video src="#" controls></video>
+
 <video width="320" height="240" controls>
   <source src="movie.mp4" type="video/mp4" />
   <source src="movie.ogg" type="video/ogg" />
@@ -358,26 +430,49 @@ JavaScript</div>
 </video>
 ```
 
-- 音频
+| 属性名称 | 描述 |  
+|  :--- | :-- | 
+| src | 路径 |
+|  controls  | 向用户显示控件，如播放按钮 |
+|  autoplay  | 自动播放（谷歌浏览器需配合muted实现静音播放） | 
+| height | 高度 |
+| width | 宽度 |
+| loop | 循环播放 |
+| muted | 静音 |
+| poster | 未开始播放时显示的图像 |
+| preload | 如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性 |
+
+
+- 音频  
+音频标签目前支持三种格式：`MP3`、Wav、Ogg
+```html
+<audio src="#" controls></audio>
+```
 
 | 属性名称 | 描述 |
 | :-- | :--|
-| autoplay | 自动播放 |
+| src |音频路径 |
 | controls | 向用户显示控件，如播放按钮 |
-| loop | 循环播放 |
+| autoplay | 自动播放 |
+| loop | 循环播放（部分浏览器不支持） |
 | muted | 静音 |
 | preload | 如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 “autoplay”，则忽略该属性 |
-| src | 地址 |
 
-```html
-<audio controls>
-  <source src="horse.ogg" />
-  <source src="horse.mp3" />
-  您的浏览器不支持 audio 元素。
-</audio>
-```
 
 ## 扩展
+### 路径
+页面找图片、音频、视频，需要通过路径才能找到
+1. 绝对路径
+    - 从盘符开始出发，找目标的过程
+
+2. 相对路径（常用）  
+    - 从当前`项目文件`开始出发，找目标的过程
+    - 同级目录`./`
+    - 下级目录`../`
+
+3. 网络路径
+    - 网络地址
+
 ### 头部元素
 一般放置于 `<head>` 区域的元素标签
 
@@ -453,24 +548,24 @@ HTML5 提供了新的语义元素来明确一个Web页面的不同部分:
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20220811/image.3bhm2u1rgya0.webp)
 
 ### 字符实体
-在 HTML 中，某些字符是预留的不能直接使用，如小于号（<）和大于号（>），直接使用会误认为它们是标签。  
-所以如果我们希望正确地显示预留字符，那必须在 HTML 源代码中使用字符实体（character entities）。
+- 在 HTML 中，某些字符是预留的不能直接使用，如小于号（<）和大于号（>），直接使用会误认为它们是标签。  
+- 所以如果我们希望正确地显示预留字符，那必须在 HTML 源代码中使用字符实体（character entities）。
 
 | 显示结果 | 描述 |	实体名称 |
 |:-|:-|:- |
-|  | 空格 | &nbsp; |
-|<|	小于号|	&lt;|
-|>|	大于号|	&gt;|
-|&|	和号	|&amp;|
-|©|	版权符号|	&copy;|
-|×	|乘号	|&times;|
+|  | 空格 | `&nbsp;`|
+|<|	小于号|	`&lt;`|
+|>|	大于号|	`&gt;`|
+|&|	和号	|`&amp;`|
+|©|	版权符号|	`&copy;`|
+|×	|乘号	|`&times;`|
 
 ### 颜色 
 几种颜色的表示方式  
 - 英语表示：blue
-- 十进制表示 : rgb();
+- 十进制表示 : rgb(255,255,255);
 - 十六进制表示 : #000000;
-- 带透明度十进制 : rgba();
+- 带透明度十进制 : rgba(0,0,0,0.5);
 
 具体参见：[HTML颜色](https://www.runoob.com/html/html-tables.html)
 
