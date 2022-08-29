@@ -22,10 +22,12 @@ HTML5是用来描述网页的一种语言，被称为`超文本标记语言`。�
 ### 网页框架
 ```html
 <!DOCTYPE html>      <!--声明为html5文档-->
-<html lang="en">     <!--根元素  英文语言-->
+<html lang="zh-CN">     <!--根元素  zh-CN中文语言网站  en英文语言网站-->
 <head>               <!--头部-->
     <meta charset="UTF-8">       <!--元数据 网页编码格式为utf-8-->
+    <!--兼容ie浏览器的（ie兼容性差）-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">     
+    <!--宽度等于设备宽度：移动端网页开发的时候用到-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <title>Document</title>      文档的标题
 
@@ -520,12 +522,13 @@ input标签通过type属性值的不同，展示不同效果
 IE 浏览器版本渲染设置：
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+<!-- SEO 搜索引擎三大标签 -->
 为搜索引擎定义关键词
 <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
-
 为网页定义描述内容:
 <meta name="description" content="告诉搜索引擎网站的基本简介" />
 <meta name="description" content="免费 Web & 编程 教程">
+<title>网站标题</title>  
 
 定义网页作者:
 <meta name="author" content="Runoob">

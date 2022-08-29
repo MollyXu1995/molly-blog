@@ -29,6 +29,7 @@ Visual Studio Code（简称 VS Code）是一款由微软开发且跨平台的免
 |代码向前缩进|Tab+Shift||
 |在下面插入行|Ctrl+Enter||
 |在上面插入行|Ctrl+Shift+Enter||
+|选多行加内容|Shift+Alt+鼠标左键单击||
 
 
 		   
