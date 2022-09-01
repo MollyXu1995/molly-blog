@@ -25,6 +25,7 @@ Visual Studio Code（简称 VS Code）是一款由微软开发且跨平台的免
 |快速查找|Ctrl+F||
 |快速替换|Ctrl+H|一次回车替换一次|
 |添加/删除行注释|Ctrl+/||
+|添加/删除多行注释|Ctrl+shift+/||
 |代码向后缩进|Tab||
 |代码向前缩进|Tab+Shift||
 |在下面插入行|Ctrl+Enter||
