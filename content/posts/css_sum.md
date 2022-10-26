@@ -147,6 +147,7 @@ CSS 优先规则：
     - 不平铺no-repeat；沿x轴平铺repeat-x；沿y轴平铺repeat-y；
 
 - background-attachment : 背景图片是否固定
+    - fixed
 
 - background-position : 背景图片定位(可以使用%和 px 值和英语单词)
     - background-position:水平方向位置 垂直方向位置
@@ -159,10 +160,21 @@ CSS 优先规则：
     - 背景图位置取值是数值时，水平垂直取值顺序不要颠倒
 
 - background-size : 设置背景图片的尺寸
+    - background-size: cover   
+    缩放背景图片以完全覆盖背景区，可能背景图片部分看不见。和 contain 值相反，cover 值尽可能大的缩放背景图像并保持图像的宽高比例（图像不会被压扁）。该背景图以它的全部宽或者高覆盖所在容器。当容器和背景图大小不同时，背景图的 左/右 或者 上/下 部分会被裁剪。
+    - background-size: contain  
+    缩放背景图片以完全装入背景区，可能背景区部分空白。contain 尽可能的缩放背景并保持图像的宽高比例（图像不会被压缩）。该背景图会填充所在的容器。当背景图和容器的大小的不同时，容器的空白区域（上/下或者左/右）会显示由 background-color 设置的背景颜色。
 
 - background-origin : 设置背景图的位置
 (padding-box\border-box\content-box)
 
+- linear-gradient();
+    - 创建一个表示两种或多种颜色线性渐变的图片效果
+```css
+background-image: linear-gradient(115deg,
+                    rgba(58, 58, 158, 0.8),
+                    rgba(136, 136, 206, 0.7)),
+```
 背景图：起修饰美化作用的图，用 background-image    
 img图：重要的图，如产品图等，用 img
 
@@ -625,7 +637,7 @@ HTML文档中的标签定义，`p、b、div、a、img、body`等。
 ```
 
 #### 子代选择器
-选择所有作为E元素的直接子元素F，对更深一层元素不起作用，用`>`表示  
+选择所有作为E元素的直接亲子元素F，对更深一层元素不起作用，用`>`表示  
 `E>F{}`
 `E>F>G…{}`
 ```html
@@ -921,17 +933,17 @@ E::after{           /* E大米 */
     |flex-direction|修改主轴方向|
     |flex-wrap|项目换行|
     |flex-flow|flex-direction和flex-wrap属性的简写形式。默认值为row nowrap|
-    |align-content|
+    |align-content|定义了换行后多根轴线的对齐方式|
 
 1、`justify-content`  
-- 定义了项目在主轴上的排列对齐方式。
+- 定义了项目在主轴上的排列分布对齐方式。(项目和空白)
 
     |属性值|作用|
     |:--|:--|
     |flex-start|默认值，起点开始依次排列（左对齐）|
     |flex-end|终点开始依次排列（右对齐）|
     |`center`|居中|
-    |space-between|两端对齐，项目之间的间隔都相等|
+    |space-between|两端对齐，项目之间的间隔都相等。|
     |space-around|每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。|
     |space-evenly|项目与容器、容器与容器，间距都相等|
 
@@ -982,7 +994,7 @@ E::after{           /* E大米 */
 - 默认值为row nowrap。
 
 6、`align-content`
-- 定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+- 定义了换行后多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
 
     |属性值|作用|
     |:--|:--|
@@ -1023,8 +1035,10 @@ E::after{           /* E大米 */
 
 
 2、`flex`  
-- flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+- flex-grow, flex-shrink 和 flex-basis的简写，`默认值为0 1 auto`。后两个属性可选。
 - 弹性伸缩比，使用flex属性修改项目子元素的宽度尺寸。`flex:取值整数`，占用父级剩余尺寸的份数。
+- 该属性有两个快捷值：auto (即1 1 auto) 和 none (即0 0 auto)。
+- 建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
 
 比如：给外层容器`container`增加弹性容器的设置，就可以刚好的管理里面的这三个子项目`box1、box2、box3`，纵向摆放变成了横向摆放。
 ```html
@@ -1084,7 +1098,7 @@ E::after{           /* E大米 */
 
 6、`flex-basis`  
 - 定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
-- 它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+- 它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。或百分比写法。
     
 > 提示：  
 >①默认弹性容器里内容横向摆放  
