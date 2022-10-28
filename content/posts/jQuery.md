@@ -1,7 +1,7 @@
 ---
 title: "JQuery知识总结"
 date: 2022-10-26T14:07:45+08:00
-tags: ['Language']
+tags: ['Frontend Framework']
 series: ['前端学习之旅']
 ---
 
