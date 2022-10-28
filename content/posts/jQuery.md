@@ -1,5 +1,5 @@
 ---
-title: "JQuery知识总结"
+title: "JQuery的使用"
 date: 2022-10-26T14:07:45+08:00
 tags: ['Frontend Framework']
 series: ['前端学习之旅']
