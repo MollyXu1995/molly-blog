@@ -304,7 +304,7 @@ table,th, td{border: 1px solid black;}
 清除浮动带来的影响: 浮动元素会造成父元素高度塌陷、后续标准流元素会受到影响，对布局不利。  
 解决方案：  
 - 父元素设置高度，撑开元素本身大小
-- 为受影响的元素增加clear属性` clear:both;`
+- 为受影响的元素（即给添加浮动的下一个同级元素来添加清除浮动）增加clear属性` clear:both;` 
 - 父元素塌陷且同级元素也受到了影响（父布局不能设置高度）
     - overflow清除浮动：在父级标签的样式里加 `overflow:hidden;` `clear: both;`
     - 伪对象方式：为父标签添加伪类`::after`或`::before`，设置空的内容` content: "";`，并且使用`display: block;` `clear:both;` 
@@ -796,17 +796,17 @@ a:active 必须被置于 a:hover 之后，才是有效的。
 |:-|:-|
 |E::first-letter|	设置对象内的第一个字符的样式。|
 |E::first-line	|设置对象内的第一行的样式。|
-|`E::before`	|设置在对象前（依据对象树的逻辑结构）发生的内容。必须和 content 属性一起使用|
-|`E::after`	|设置在对象后（依据对象树的逻辑结构）发生的内容。必须和 content 属性一起使用|
+|`E::before`	|设置在对象前（依据对象树的逻辑结构）发生的内容。必须和 content 属性一起使用。`即在E里面的排在第一的子元素`|
+|`E::after`	|设置在对象后（依据对象树的逻辑结构）发生的内容。必须和 content 属性一起使用。`即在E里面的排在最后的子元素`|
 |`E::placeholder`|设置对象文字占位符的样式。可用于表单输入框的信息提示文本|
 |E::selection	|设置对象被选择时的颜色。|
 
 ```css
-E::before{           /* 大米E */
+E::before{           /* 大米 E */
     content:"大米";
 }
 
-E::after{           /* E大米 */
+E::after{           /* E 大米 */
     content:"大米";
 }
 ```
@@ -893,6 +893,7 @@ E::after{           /* E大米 */
     <div>你好</div>
 </body>
 ```
+
 ### Flex布局/弹性布局
 - 是CSS3的一种新的浏览器提倡的布局模式；灵活控制块级项目的布局方式，避免浮动布局脱标的问题   
 - CSS3弹性盒是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式；  
@@ -1103,6 +1104,25 @@ E::after{           /* E大米 */
 > 提示：  
 >①默认弹性容器里内容横向摆放  
 >②弹性容器外、弹性子元素内是正常渲染的。只定义了弹性子元素如何在弹性容器内布局
+
+
+#### 关于Flex布局中使用 gap 属性
+- flex布局可以使用`gap`属性，来定义间距    
+- 但还处于草案阶段 [2021/6/3] ，如果需要在生产环境使用，可能需要进行考量，虽说主流浏览器全部都已经支持了。
+- 详细 <https://yogwang.site/2021/CSS-use-gap-in-flex-layout/>
+
+```css
+#flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+  justify-content: space-between;
+}
+```
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221031/image.l64ln18p1cg.webp)
+
+
+
 
 
 ### 百分比布局
