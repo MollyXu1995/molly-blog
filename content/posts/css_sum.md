@@ -358,10 +358,10 @@ table,th, td{border: 1px solid black;}
 - 相对、绝对、固定默认是层级相同
 - 定位的盒子，后来者居上
 
-Z-index:整数；  
+`z-index`:整数；  
 - 设置元素的堆叠顺序（谁的Z-index值大，就能压盖Z-index值小的，可为负值）
-- Z-index值默认是0
-- 必须配合定位才生效
+- z-index值`默认是0，值谁大谁在上`
+- `必须配合定位才生效`
 
 vertical-align  
 - 设置元素的垂直对齐方式
@@ -747,8 +747,8 @@ E元素**后面的所有兄弟元素**F，用`~`表示
 |`E:hover`	|CSS1/2	|设置元素在其鼠标悬停时的样式。|
 |E:active|	CSS1/2	|设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式。|
 |E:focus	|CSS1/2	|设置元素在成为输入焦点（该元素的onfocus事件发生）时的样式。|
-|`E:first-child`	|CSS2|	匹配父元素的第一个子元素E。|
-|`E:last-child`	|CSS3|	匹配父元素的最后一个子元素E。|
+|`E:first-child`	|CSS2|	匹配父元素的第一个子元素E。`即第一个E`|
+|`E:last-child`	|CSS3|	匹配父元素的最后一个子元素E。`即最后一个E`|
 |E:only-child	|CSS3|	匹配父元素仅有的一个子元素E。|
 |`E:nth-child(n)`|	CSS3|	匹配父元素的第n个子元素E。|
 |`E:nth-child(公式)`|	CSS3|	匹配父元素的第公式个子元素E。公式如下|
@@ -790,15 +790,15 @@ a:active 必须被置于 a:hover 之后，才是有效的。
 ### 伪元素选择器
 伪元素：由css模拟出的标签效果  
 - 网页中的一些装饰的不重要的小图就可以用伪元素选择器编写  
-- 伪元素默认是行内元素
+- `伪元素默认是行内元素`
 
 |选择符|	描述|
 |:-|:-|
 |E::first-letter|	设置对象内的第一个字符的样式。|
 |E::first-line	|设置对象内的第一行的样式。|
-|`E::before`	|设置在对象前（依据对象树的逻辑结构）发生的内容。必须和 content 属性一起使用。`即在E里面的排在第一的子元素`|
-|`E::after`	|设置在对象后（依据对象树的逻辑结构）发生的内容。必须和 content 属性一起使用。`即在E里面的排在最后的子元素`|
-|`E::placeholder`|设置对象文字占位符的样式。可用于表单输入框的信息提示文本|
+|`E::before`	|设置在对象前（依据对象树的逻辑结构）发生的内容。`必须和 content 属性一起使用`。`即在E里面的排在第一的子元素`|
+|`E::after`	|设置在对象后（依据对象树的逻辑结构）发生的内容。`必须和 content 属性一起使用`。`即在E里面的排在最后的子元素`|
+|`E::placeholder`|设置对象文字占位符的样式。可用于表单输入框input的信息提示文本|
 |E::selection	|设置对象被选择时的颜色。|
 
 ```css
@@ -1413,6 +1413,7 @@ border-radius:一个值|两个值|三个值|四个值
 
 ### 盒子阴影
 box-shadow: 给盒子添加阴影效果 6个值
+- 详情 <https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow>
 
 |参数|作用|
 |:--|:--|
@@ -1424,7 +1425,7 @@ box-shadow: 给盒子添加阴影效果 6个值
 |inset|可选，将阴影改为内部阴影|
 
 ### 过渡
-作用：让元素的样式慢慢的变化，常配合hover使用  
+作用：让元素的样式慢慢的变化，`常配合hover使用`  
 transition:
 |参数|取值|
 |:--|:--|
@@ -1464,6 +1465,7 @@ transition:
     transform:translate(50px 100px)；
 }
 ```
+
 2. 绝对定位居中
 ```css
 .box{
@@ -1513,7 +1515,7 @@ transition:
 }
 ```
 
-旋转  
+4. 旋转  
 transform：rotate(角度);  
 - 注意：角度单位deg  
 - 取值正负均可：正顺时针旋转，负逆时针旋转
@@ -1534,7 +1536,7 @@ transform：rotate(角度);
 /* 多重转换如果涉及旋转，就往后书写 */
 transform:translate() rotate();
 ```
-缩放  
+5. 缩放  
 使用scale改变元素的尺寸   
 - transform:scale(x轴缩放倍数，y轴缩放倍数);
 - transform:scale(缩放倍数);
@@ -1542,8 +1544,10 @@ transform:translate() rotate();
     - scale值大于1表示放大，小于1表示缩小
 - 伪元素、hover的transform会有层叠问题，要写成复合属性，不要分开
 
-渐变  
-多个颜色逐渐变化的视觉效果，一般用于设置盒子的背景  
+6. `渐变`  
+多个颜色逐渐变化的视觉效果，一般用于设置盒子的背景 
+- 详情 <https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Images/Using_CSS_gradients>
+
 ```css
 background-image:linear-gradient(颜色1，颜色2，颜色3);
 
@@ -1553,6 +1557,7 @@ background-image:linear-gradient(
     rgba(0,0,0,0.5)
 );
 ```
+
 空间转换（先略）
 
 
