@@ -1621,8 +1621,11 @@ css文档：首字母
 - 十进制表示 : rgb(255,255,255);
 - 十六进制表示 : #000000;
 - 带透明度十进制 : rgba(188,10,18,0.3);  a是透明度 取值为0-1
-
 可参见：[CSS颜色](https://www.runoob.com/cssref/css-colors.html)
+
+- CSS Color Level 4的色值新语法
+
+{{< card "https://www.zhangxinxu.com/wordpress/2020/10/css-color-level-4/" >}}  
 
 
 ## 进阶
