@@ -26,10 +26,14 @@ tags: ['Issue']
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
 
     <script src="my.js"></script>
-
-</head>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/slider.js"></script>
+</body>
 ```
 
 ## css清除默认样式
@@ -90,6 +94,18 @@ input {
 }
 ```
 
-## 项目创建目录
+## 项目结构创建目录
 
+文件：
+- `index.html` 
+- `favicon.ico` 网页标题图
+
+文件夹：
+- `html`
+- `css`
+- `js`
+- `images` 一般是png格式：logo图、精灵图等
+- `uploads` 商品产品图:jpg格式、png格式等
+- `less`
+- `lib`下载解压的字体图标、别人的代码等等
 
