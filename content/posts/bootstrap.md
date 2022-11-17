@@ -1,17 +1,17 @@
 ---
 title: "Bootstrap的使用"
 date: 2022-08-29T15:50:47+08:00
-tags: ['Frontend Framework']
+tags: ['Support']
 series: ['前端学习之旅']
 ---
 
 ## 简介
-BootStrap框架，快速开发响应式网页。
+BootStrap框架，`快速开发 响应式网页`。
 
-BootStrap是由Twitter公司开发维护的`前端UI框架`，它提供了大量`编写好的css样式`，允许开发者结合一定`html结构和javescript`，快速编写功能完善的网页及常见交互效果。中文官网：[https://www.bootcss.com](https://www.bootcss.com)
+BootStrap是由Twitter公司开发维护的`前端UI框架`，它提供了大量`编写好的css样式`，允许开发者结合一定`html结构和javescript`，快速编写功能完善的网页及常见交互效果。中文官网：<https://www.bootcss.com>
 
 ### 下载
-地址：[https://www.bootcss.com](https://www.bootcss.com)  
+地址：<https://www.bootcss.com>  
 
 首页——BootStrap3文档——下载BootStrap（生产环境的）——解压bootstrap-3.4.1-dist.zip压缩包——将bootstrap-3.4.1-dist文件夹放到项目中
 

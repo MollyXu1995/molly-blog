@@ -1,7 +1,7 @@
 ---
 title: "JQuery的使用"
 date: 2022-10-26T14:07:45+08:00
-tags: ['Frontend Framework']
+tags: ['Support']
 series: ['前端学习之旅']
 ---
 
@@ -21,7 +21,7 @@ series: ['前端学习之旅']
     - 移动端的zepto
 
 二、jQuery 的概念
-- jQuery 是一个快速、简洁的 JavaScript 库
+- `jQuery 是`一个快速、简洁的 `JavaScript 库`
 - j 就是 JavaScript；   Query 查询； 意思就是查询js，把js中的DOM操作做了封装。
 - 学习jQuery本质： 就是学习调用这些函数（方法）。
 
@@ -35,8 +35,8 @@ series: ['前端学习之旅']
 - 免费、开源
 
 ### jQuery 的下载与使用
-一、下载  
 
+一、下载  
 1、官网地址： <https://jquery.com/>
 
 2、版本：
@@ -47,12 +47,10 @@ series: ['前端学习之旅']
 各个版本的下载：<https://code.jquery.com/>
 
 二、使用步骤
-
 1.  引入 jQuery 文件
 2.  使用即可
 
 ### jQuery 的入口函数
-
 一、入口函数
 
 ```html
@@ -69,23 +67,27 @@ series: ['前端学习之旅']
 
 <body>
     <script>
-        // $('div').hide();
-        // 1. 等着页面DOM加载完毕再去执行js 代码
-        // $(document).ready(function() {
-        //     $('div').hide();
-        // })
-        // 2.  等着页面DOM加载完毕再去执行js 代码
+        // 1. 等着页面DOM加载完毕后，再去执行js 代码
+        $(document).ready(function() {
+            $('div').hide();
+        })
+
+        // 2. 等着页面DOM加载完毕后，再去执行js 代码
         $(function() {
             $('div').hide(); // 隐藏div
-
         });
+
     </script>
+
     <div></div>
 
 </body>
 ```
 
-二、jQuery 的顶级对象 $
+二、jQuery 的顶级对象 `$`
+- `所有 jQuery 函数都以 $ 开头`
+- `$ 是jQuery的别称`（另外的名字）。在代码中可以使用 jQuery 代替 `$`，但一般为了方便，通常都直接使用 $ 。
+-  $同时也是jQuery的 顶级对象
 
 ```html
 <head>
@@ -102,17 +104,17 @@ series: ['前端学习之旅']
 <body>
     <div></div>
     <script>
-        // 1. $ 是jQuery的别称（另外的名字）。在代码中可以使用 jQuery 代替 $，但一般为了方便，通常都直接使用 $ 。
+      
+        $(function() {
+            alert(11)
+            $('div').hide();
+        });
 
-        // $(function() {
-        //     alert(11)
-        // });
         jQuery(function() {
-            // alert(11)
-            // $('div').hide();
+            alert(11)
             jQuery('div').hide();
         });
-        // 2. $同时也是jQuery的 顶级对象
+    
     </script>
 </body>
 ```
@@ -140,14 +142,19 @@ series: ['前端学习之旅']
         var myDiv = document.querySelector('div'); // myDiv 是DOM对象
         var mySpan = document.querySelector('span'); // mySpan 是DOM对象
         console.dir(myDiv);
+
         // 2. jQuery对象： 用jquery方式获取过来的对象是jQuery对象。 本质：通过$把DOM元素进行了包装
         $('div'); // $('div')是一个jQuery 对象
         $('span'); // $('span')是一个jQuery 对象
         console.dir($('div'));
+
         // 3. jQuery 对象只能使用 jQuery 方法，DOM 对象则使用原生的 JavaScirpt 属性和方法
-        // myDiv.style.display = 'none';
-        // myDiv.hide(); myDiv是一个dom对象不能使用 jquery里面的hide方法
-        // $('div').style.display = 'none'; 这个$('div')是一个jQuery对象不能使用原生js 的属性和方法
+        myDiv.style.display = 'none';
+        // myDiv是一个dom对象 不能使用 jquery里面的hide方法
+        myDiv.hide();   // 不可以这样
+        // 这个$('div')是一个jQuery对象 不能使用原生js 的属性和方法
+        $('div').style.display = 'none';  // 不可以这样
+
     </script>
 </body>
 ```
@@ -162,14 +169,14 @@ series: ['前端学习之旅']
 <body>
     <video src="mov.mp4" muted></video>
     <script>
-        // 1. DOM对象转换为 jQuery对象
+    // 1. DOM对象转换为 jQuery对象
         // (1) 我们直接获取视频，得到就是jQuery对象
-        // $('video');
+        $('video');
         // (2) 我们已经使用原生js 获取过来 DOM对象
         var myvideo = document.querySelector('video');
-        // $(myvideo).play();  jquery里面没有play 这个方法
+        $(myvideo).play();  // jquery里面没有play 这个方法
 
-        // 2.  jQuery对象转换为DOM对象
+     // 2. jQuery对象转换为DOM对象
         // myvideo.play();
         // 方式一：
         $('video')[0].play()  // 0 是索引号index           
@@ -181,9 +188,9 @@ series: ['前端学习之旅']
 
 ## jQuery 常用API 
 ### 选择器
-#### 基础和层级选择器
-- 原生 JS 获取元素方式很多，很杂，而且兼容性情况不一致，因此 jQuery 给我们做了封装，使获取元素统一标准。
-- `$("选择器") ` 里面选择器直接写 CSS 选择器即可，但是要加引号      
+#### 获取定位元素
+- 原生 JS 获取元素方式很多，而且兼容性情况不一致，因此 jQuery 给我们做了封装，使获取元素统一标准。
+- `$("选择器") ` 里面选择器`直接写 CSS 选择器`即可，但是要`加引号`, `加符号`
 
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221016/image.72bld0npda00.webp)
 
@@ -219,41 +226,8 @@ series: ['前端学习之旅']
 </body>
 ```
 
-#### 隐式迭代（重要）
-- 遍历内部 DOM 元素（伪数组形式存储）的过程就叫做隐式迭代。
-- 简单理解：给匹配到的所有元素进行循环遍历，执行相应的方法，而不用我们再进行循环，简化我们的操作，方便我们调用。
-
-```html
-<head>
-    <script src="jquery.min.js"></script>
-</head>
-
-<body>
-    <div>惊喜不，意外不</div>
-    <div>惊喜不，意外不</div>
-    <div>惊喜不，意外不</div>
-    <div>惊喜不，意外不</div>
-    <ul>
-        <li>相同的操作</li>
-        <li>相同的操作</li>
-        <li>相同的操作</li>
-    </ul>
-    <script>
-        // 1. 获取四个div元素 
-        console.log($("div"));
-
-        // jQuery 设置样式:    $('div').css('属性', '值')      
-        // 2. 给四个div设置背景颜色为粉色，四个li设置为红色字
-        // jquery对象不能使用style
-        $("div").css("background", "pink");
-        $("ul li").css("color", "red");
-
-        // 3. 隐式迭代就是把匹配的所有元素内部进行遍历循环，给每一个元素添加css这个方法
-    </script>
-</body>
-```
-
 #### 筛选选择器
+- 重点记住：`:odd` ， `:even` ， `:first` ， `:last` ，`eq()`
 
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221016/image.4g3erbjiw0s0.webp)
 
@@ -281,9 +255,16 @@ series: ['前端学习之旅']
     </ol>
     <script>
         $(function() {
+            // 第一个 li
             $("ul li:first").css("color", "red");
+
+            // 索引号为2的  li   索引号从0开始计
             $("ul li:eq(2)").css("color", "blue");
+
+            // 索引号为奇数 的 li  索引号从0开始计
             $("ol li:odd").css("color", "skyblue");
+
+            // 索引号为偶数 的 li  索引号从0开始计
             $("ol li:even").css("color", "pink");
         })
     </script>
@@ -291,7 +272,7 @@ series: ['前端学习之旅']
 ```
 
 #### 筛选方法（重点）
-- 重点记住：`parent()  children()  find()  siblings()  eq()`
+- 重点记住：`parent()` ， `children()` ， `find()` ， `siblings()` ， `eq()` ， `:nth-child(n)`
 
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221016/image.m9pklc9r6i8.webp)
 
@@ -314,17 +295,25 @@ series: ['前端学习之旅']
         </div>
     </div>
     <script>
-        // 注意一下都是方法 带括号
+    // 注意一下都是方法 带括号
         $(function() {
-            // 1. 父  parent()  返回的是 最近一级的父级元素 亲爸爸
+        // 1. 父  parent()  返回的是 最近一级的父级元素 亲爸爸
             console.log($(".son").parent()); // father
 
-            // 2. 子
+        // 2. 子
             // (1) 亲儿子 children()  类似子代选择器  ul>li
             $(".nav").children("p").css("color", "red"); // 我是屁
 
             // (2) 可以选里面所有的孩子 包括儿子和孙子  find() 类似于后代选择器
             $(".nav").find("p").css("color", "red"); // 我是屁 我是p
+
+        // 3. 第 n个元素  :nth-child(n)
+            // 即 第一个 p 元素
+            $(".nav p:nth-child(1)").css("color", "blue"); 
+            
+            // well亲子中  第2个target  添加类名
+            $('.well>.target:nth-child(2)').addClass('animated bounce');
+
         });
     </script>
 </body>
@@ -355,26 +344,24 @@ series: ['前端学习之旅']
     <div class="current">俺有current</div>
     <div>俺木有current</div>
     <script>
+
         // 注意一下都是方法 带括号
         $(function() {
             // 1. 兄弟元素siblings 除了自身元素之外的所有亲兄弟
             $("ol .item").siblings("li").css("color", "red");
 
-            // 2. 第n个元素
-            var index = 2;
+            // 2. 第n个元素 根据索引号
             // (1) 我们可以利用选择器的方式选择
             $("ul li:eq(2)").css("color", "blue");
-            // $("ul li:eq("+index+")").css("color", "blue");
 
             // (2) 我们可以利用选择方法的方式选择  更推荐这种写法
             $("ul li").eq(2).css("color", "blue");
-            // $("ul li").eq(index).css("color", "blue");
 
             // 3. 判断是否有某个类名
             console.log($("div:first").hasClass("current")); // true 
             console.log($("div:last").hasClass("current")); // false
-
         });
+
     </script>
 </body>
 ```
@@ -519,7 +506,7 @@ series: ['前端学习之旅']
 ```
 
 #### 里面的排他思想
-- 想要多选一的效果，排他思想：当前元素设置样式，其余的兄弟元素清除样式。
+- 想要多选一的效果，排他思想：`当前元素设置样式`，`其余的兄弟元素清除样式`。
 - `$(this).css("color","red");`    
 `$(this).siblings(). css("color","");`  
 
@@ -705,18 +692,17 @@ series: ['前端学习之旅']
         $(function() {
             // 1. 隐式迭代 给所有的按钮都绑定了点击事件
             $("button").click(function() {
-                // 2. 让当前元素颜色变为红色
-                // $(this).css("color", "red");
-                // 3. 让其余的姐妹元素不变色 
-                // $(this).siblings().css("color", "");
-                // 链式编程
-                // $(this).css("color", "red").siblings().css("color", "");
-                // 我的颜色为红色, 我的兄弟的颜色为空
-                // $(this).siblings().css('color', 'red');
-                // 我的兄弟变为红色  ,我本身不变颜色
-                $(this).siblings().parent().css('color', 'blue');
-                // 最后是给我的兄弟的爸爸 body 变化颜色 
 
+            // 2. 让当前元素颜色变为红色
+                $(this).css("color", "red");
+            // 3. 让其余的姐妹元素不变色 
+                $(this).siblings().css("color", "");
+
+            // 4. 链式编程  节省了代码量
+                $(this).css("color", "red").siblings().css("color", "");
+
+            // 给我的兄弟的爸爸 body 变化颜色 
+                $(this).siblings().parent().css('color', 'blue');
             });
         })
     </script>
@@ -724,14 +710,14 @@ series: ['前端学习之旅']
 ```
 
 ### 样式操作
-#### 操作 css 方法
+#### 操作 css方法
 
 jQuery 可以使用 css 方法来修改简单元素样式； 也可以操作类，修改多个样式。
 
 1、参数只写属性名，则是返回属性值
 - `$(this).css("color");`
 
-2、参数是属性名，属性值，逗号分隔，是设置一组样式，属性必须加引号，值如果是数字可以不用跟单位和引号
+2、参数是属性名，属性值，逗号分隔，是设置一组样式。属性必须加引号，值如果是数字可以不用跟单位和引号
 - `$(this).css("color","red");`
 
 3、参数可以是对象形式，方便设置多组样式。属性名和属性值用冒号隔开， 属性可以不用加引号，值是数字可以不用跟单位和引号。值不是数字，则需要加引号
@@ -752,33 +738,38 @@ jQuery 可以使用 css 方法来修改简单元素样式； 也可以操作类�
 <body>
     <div></div>
     <script>
-        // 操作样式之css方法
+        // 操作样式之 css方法
         $(function() {
-            console.log($("div").css("width"));
-            // $("div").css("width", "300px");  // 属性名一定要加引号
-            // $("div").css("width", 300);  // 值是数字可以不用跟单位和引号
+            console.log($("div").css("width")); // 返回属性值
+
+            $("div").css("width", "300px");  // 属性名一定要加引号
+            $("div").css("width", 300);  // 值是数字可以不用跟单位和引号
+
+        // 如果是复合属性则必须采取 驼峰命名法，值不是数字 则需要加引号
             $("div").css({
                 width: 400,
                 height: 400,
                 backgroundColor: "red"
-                    // 如果是复合属性则必须采取驼峰命名法，如果值不是数字，则需要加引号
             })
         })
     </script>
 </body>
 ```
 
-#### 设置类样式方法
-- 作用等同于以前的 classList，可以操作类样式， 注意操作类里面的参数不要加点。
+#### 操作 类样式方法
+- 作用等同于以前的 classList，可以操作类样式，注意操作`类里面的参数`,`不加点`。
+- 类操作 与 className区别：
+    - 原生 JS 中 className 会覆盖元素原先里面的类名。
+    - jQuery 里面的类操作只是对指定类进行操作，不影响原先的类名。
 
 1、添加类
--  `$("div").addClass("current");`
+-  `$("div").addClass("类名");` (类名不用加. #符号)
 
 2、移除类
-- `$("div").removeClass("current");`
+- `$("div").removeClass("类名");`  (类名不用加. #符号)
 
 3、切换类
-- `$("div").toggleClass("current");`
+- `$("div").toggleClass("类名");` (类名不用加. #符号)
 
 ```html
 <head>
@@ -802,20 +793,24 @@ jQuery 可以使用 css 方法来修改简单元素样式； 也可以操作类�
 <body>
     <div class="current"></div>
     <script>
+
         $(function() {
             // 1. 添加类 addClass()
-            // $("div").click(function() {
-            //     // $(this).addClass("current");
-            // });
+            $("div").click(function() {
+                $(this).addClass("current");
+            });
+
             // 2. 删除类 removeClass()
-            // $("div").click(function() {
-            //     $(this).removeClass("current");
-            // });
+            $("div").click(function() {
+                $(this).removeClass("current");
+            });
+
             // 3. 切换类 toggleClass()
             $("div").click(function() {
                 $(this).toggleClass("current");
             });
         })
+
     </script>
 </body>
 ```
@@ -921,54 +916,25 @@ jQuery 可以使用 css 方法来修改简单元素样式； 也可以操作类�
 </body>
 ```
 
-#### 类操作与className区别
-- 原生 JS 中 className 会覆盖元素原先里面的类名。
-- jQuery 里面类操作只是对指定类进行操作，不影响原先的类名。
-
-```html
-<head>
-    <style>
-        .one {
-            width: 200px;
-            height: 200px;
-            background-color: pink;
-            transition: all .3s;
-        }
-        
-        .two {
-            transform: rotate(720deg);
-        }
-    </style>
-    <script src="jquery.min.js"></script>
-</head>
-
-<body>
-    <div class="one two"></div>
-    <script>
-        // var one = document.querySelector(".one");
-        // one.className = "two";
-        // $(".one").addClass("two");  这个addClass相当于追加类名 不影响以前的类名
-        $(".one").removeClass("two"); // 清除 two类名，不影响 one类名
-    </script>
-</body>
-```
-
 ### 效果
 jQuery 给我们封装了很多动画效果，最为常见的如下：  
-1. 显示隐藏： `show()` `hide()` `toggle()`
+1. 显示隐藏切换： `show()` `hide()` `toggle()`
 2. 滑动：`slideDown()` `slideUp()` `slideToggle()`
 3. 淡入淡出：`fadeIn()` `fadeOut()` `fadeToggle()` `fadeTo()`
 4. 自定义动画：`animate()`
 
 #### 显示隐藏切换效果
-1、显示语法：`show([speed,[easing],[fn]])`   
-2、隐藏语法：`toggle([speed,[easing],[fn]])`  
-3、显示与隐藏切换语法：`toggle([speed,[easing],[fn]])`  
+1、显示语法：`show(speed, easing, fn)`   
+2、隐藏语法：`hide(speed, easing, fn)`  
+3、显示与隐藏切换语法：`toggle(speed, easing, fn)`  
 
 参数：  
-（1）参数都可以省略， 无动画直接显示。  
-（2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。  
-（3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。  
+（1）参数都可以省略， 无动画直接显示。 
+
+（2）speed：三种预定速度之一的字符串('slow'、'normal'、'fast')或表示动画时长的毫秒数值(如：1000)。  
+
+（3）easing：(Optional) 用来指定切换效果，默认是'swing'，可用参数'linear'。  
+
 （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。 建议：平时一般不带参数，直接显示隐藏即可。
   
 ```html
@@ -995,11 +961,13 @@ jQuery 给我们封装了很多动画效果，最为常见的如下：
                     alert(1);
                 });
             })
+
             $("button").eq(1).click(function() {
                 $("div").hide(1000, function() {
                     alert(1);
                 });
             })
+
             $("button").eq(2).click(function() {
                     $("div").toggle(1000);
                 })
@@ -1010,15 +978,15 @@ jQuery 给我们封装了很多动画效果，最为常见的如下：
 ```
 
 #### 滑动效果
-1、下滑效果语法规范：`slideDown([speed,[easing],[fn]])`  
-2、上滑效果语法规范: `slideUp([speed,[easing],[fn]])`  
-3、上滑下滑切换效果语法规范: `slideToggle([speed,[easing],[fn]])`  
+1、下滑效果语法规范：`slideDown(speed, easing, fn)`  
+2、上滑效果语法规范: `slideUp((speed, easing, fn)`  
+3、上滑下滑切换效果语法规范: `slideToggl(speed, easing, fn)`  
 
 参数：  
 （1）参数都可以省略。  
-（2）speed:三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。  
-（3）easing:(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。  
-（4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。  
+（2）speed：三种预定速度之一的字符串('slow'、'normal'、'fast')或表示动画时长的毫秒数值(如：1000)。  
+（3）easing：(Optional) 用来指定切换效果，默认是'swing'，可用参数'linear'。  
+（4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。 
 
 ```html
 <head>
@@ -1060,196 +1028,18 @@ jQuery 给我们封装了很多动画效果，最为常见的如下：
 </body>
 ```
 
-#### 事件切换
-- `hover([over,]out)`
-
-参数：   
-（1）over:鼠标移到元素上要触发的函数（相当于mouseenter）  
-（2）out:鼠标移出元素要触发的函数（相当于mouseleave）  
-（3）如果只写一个函数，则鼠标经过和离开都会触发它  
-
-案例：简洁版滑动下拉菜单
-```html
-<head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        li {
-            list-style-type: none;
-        }
-        
-        a {
-            text-decoration: none;
-            font-size: 14px;
-        }
-        
-        .nav {
-            margin: 100px;
-        }
-        
-        .nav>li {
-            position: relative;
-            float: left;
-            width: 80px;
-            height: 41px;
-            text-align: center;
-        }
-        
-        .nav li a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            line-height: 41px;
-            color: #333;
-        }
-        
-        .nav>li>a:hover {
-            background-color: #eee;
-        }
-        
-        .nav ul {
-            display: none;
-            position: absolute;
-            top: 41px;
-            left: 0;
-            width: 100%;
-            border-left: 1px solid #FECC5B;
-            border-right: 1px solid #FECC5B;
-        }
-        
-        .nav ul li {
-            border-bottom: 1px solid #FECC5B;
-        }
-        
-        .nav ul li a:hover {
-            background-color: #FFF5DA;
-        }
-    </style>
-    <script src="jquery.min.js"></script>
-</head>
-
-<body>
-    <ul class="nav">
-        <li>
-            <a href="#">微博</a>
-            <ul>
-                <li>
-                    <a href="">私信</a>
-                </li>
-                <li>
-                    <a href="">评论</a>
-                </li>
-                <li>
-                    <a href="">@我</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">微博</a>
-            <ul>
-                <li>
-                    <a href="">私信</a>
-                </li>
-                <li>
-                    <a href="">评论</a>
-                </li>
-                <li>
-                    <a href="">@我</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">微博</a>
-            <ul>
-                <li>
-                    <a href="">私信</a>
-                </li>
-                <li>
-                    <a href="">评论</a>
-                </li>
-                <li>
-                    <a href="">@我</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">微博</a>
-            <ul>
-                <li>
-                    <a href="">私信</a>
-                </li>
-                <li>
-                    <a href="">评论</a>
-                </li>
-                <li>
-                    <a href="">@我</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <script>
-        $(function() {
-            // 鼠标经过
-            // $(".nav>li").mouseover(function() {
-            //     // $(this) jQuery 当前元素  this不要加引号
-            //     // show() 显示元素  hide() 隐藏元素
-            //     $(this).children("ul").slideDown(200);
-            // });
-            // // 鼠标离开
-            // $(".nav>li").mouseout(function() {
-            //     $(this).children("ul").slideUp(200);
-            // });
-            // 1. 事件切换 hover 就是鼠标经过和离开的复合写法
-            // $(".nav>li").hover(function() {
-            //     $(this).children("ul").slideDown(200);
-            // }, function() {
-            //     $(this).children("ul").slideUp(200);
-            // });
-            // 2. 事件切换 hover  如果只写一个函数，那么鼠标经过和鼠标离开都会触发这个函数
-            $(".nav>li").hover(function() {
-                $(this).children("ul").slideToggle();
-            });
-        })
-    </script>
-</body>
-```
-
-#### 动画队列及其停止排队方法  
-1、动画或效果队列  
-- 动画或者效果一旦触发就会执行，如果多次触发，就造成多个动画或者效果排队执行。  
-
-2、停止排队
-- `stop()`  
-参数：  
-(1）stop() 方法用于停止动画或效果。  
-(2)  注意： stop() 写到动画或者效果的前面， 相当于停止结束上一次的动画。
-
-```js
-$(function() {
-
-            // 事件切换 hover  如果只写一个函数，那么鼠标经过和鼠标离开都会触发这个函数
-            $(".nav>li").hover(function() {
-                // stop 方法必须写到动画的前面
-                $(this).children("ul").stop().slideToggle();
-            });
-        })
-```
-
 #### 淡入淡出效果
-1、淡入效果语法规范：`fadeIn([speed,[easing],[fn]])`  
-2、淡出效果语法规范：`fadeOut([speed,[easing],[fn]])`  
-3、淡入淡出切换效果语法规范：`fadeToggle([speed,[easing],[fn]])`  
-4、渐进方式调整到指定的不透明度：`fadeTo([[speed],opacity,[easing],[fn]])`
-- opacity 透明度必须写，取值 0~1 之间。  
+1、淡入效果语法规范：`fadeIn(speed, easing, fn)`  
+2、淡出效果语法规范：`fadeOut(speed, easing, fn)`  
+3、淡入淡出切换效果语法规范：`fadeToggle(speed, easing, fn)`  
+4、渐进方式调整到指定的不透明度：`fadeTo(speed, opacity, easing, fn)`
+- opacity 透明度`必须写`，取值 0~1 之间。  
 - speed：`必须写`  
 
 参数：  
-（1）参数都可以省略。  
-（2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。  
-（3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。  
+（1）参数除特别说明外，其余都可以省略。  
+（2）speed：三种预定速度之一的字符串('slow'、'normal'、 'fast')或表示动画时长的毫秒数值(如：1000)。  
+（3）easing：(Optional) 用来指定切换效果，默认是'swing'，可用参数'linear'。  
 （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。  
 
 ```html
@@ -1277,20 +1067,20 @@ $(function() {
                 // 淡入 fadeIn()
                 $("div").fadeIn(1000);
             })
+
             $("button").eq(1).click(function() {
                 // 淡出 fadeOut()
                 $("div").fadeOut(1000);
-
             })
+
             $("button").eq(2).click(function() {
                 // 淡入淡出切换 fadeToggle()
                 $("div").fadeToggle(1000);
-
             });
+
             $("button").eq(3).click(function() {
                 //  修改透明度 fadeTo() 这个速度和透明度要必须写
                 $("div").fadeTo(1000, 0.5);
-
             });
 
         });
@@ -1378,11 +1168,15 @@ $(function() {
 ```
 
 #### 自定义动画 animate
-- 语法：`animate(params,[speed],[easing],[fn])`
+- 语法：`animate(params, speed, easing, fn)`
 - 参数：  
-（1）params: 想要更改的样式属性，以对象形式传递，`必须写`。 属性名可以不用带引号， 如果是复合属性则需要采取驼峰命名法 borderLeft。其余参数都可以省略。  
-（2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。  
+
+（1）params: `想要更改的样式属性`，`以对象形式传递`，`必须写`。 属性名可以不用带引号， 如果是复合属性则需要采取驼峰命名法 borderLeft。其余参数都可以省略。
+
+（2）speed：三种预定速度之一的字符串(“slow”,“normal”, “fast”)或表示动画时长的毫秒数值(如：1000)。  
+
 （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。  
+
 （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。  
 
 ```html
@@ -1556,26 +1350,205 @@ $(function() {
 </body>
 ```
 
+#### 事件切换 hover
+- `hover(over,out)`
+
+参数：   
+（1）over:鼠标移到元素上要触发的函数（相当于mouseenter）  
+（2）out:鼠标移出元素要触发的函数（相当于mouseleave）  
+（3）如果只写一个函数，则鼠标经过和离开都会触发它  
+
+案例：简洁版滑动下拉菜单
+```html
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        a {
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .nav {
+            margin: 100px;
+        }
+        
+        .nav>li {
+            position: relative;
+            float: left;
+            width: 80px;
+            height: 41px;
+            text-align: center;
+        }
+        
+        .nav li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 41px;
+            color: #333;
+        }
+        
+        .nav>li>a:hover {
+            background-color: #eee;
+        }
+        
+        .nav ul {
+            display: none;
+            position: absolute;
+            top: 41px;
+            left: 0;
+            width: 100%;
+            border-left: 1px solid #FECC5B;
+            border-right: 1px solid #FECC5B;
+        }
+        
+        .nav ul li {
+            border-bottom: 1px solid #FECC5B;
+        }
+        
+        .nav ul li a:hover {
+            background-color: #FFF5DA;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                    <a href="">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                    <a href="">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                    <a href="">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                    <a href="">@我</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        $(function() {
+        // 鼠标经过
+            $(".nav>li").mouseover(function() {
+                $(this).children("ul").slideDown(200);
+            });
+
+        // 鼠标离开
+            $(".nav>li").mouseout(function() {
+                $(this).children("ul").slideUp(200);
+            });
+
+        // 1. 事件切换 hover 就是 鼠标经过和离开的 复合写法
+            $(".nav>li").hover(function() {
+                $(this).children("ul").slideDown(200);
+            }, function() {
+                $(this).children("ul").slideUp(200);
+            });
+
+        // 2. 事件切换 hover  如果只写一个函数，那么鼠标经过和鼠标离开都会触发这个函数
+            $(".nav>li").hover(function() {
+                $(this).children("ul").slideToggle();
+            });
+        })
+    </script>
+</body>
+```
+
+#### 动画队列及停止排队方法  
+1、动画或效果队列  
+- 动画或者效果一旦触发就会执行，如果多次触发，就造成多个动画或者效果排队执行。  
+
+2、停止排队
+- `stop()`  
+参数：  
+(1）stop() 方法用于停止动画或效果。  
+(2) `stop() 写到动画或效果的前面`，即停止结束 上一次的动画。
+
+```js
+$(function() {
+
+    // 事件切换 hover  如果只写一个函数，那么鼠标经过和鼠标离开都会触发这个函数
+    $(".nav>li").hover(function() {
+        // stop() 方法必须写到动画的前面
+        $(this).children("ul").stop().slideToggle();
+    });
+})
+```
+
 ### 属性操作
-#### 设置或获取元素固有属性值 prop()  
+#### 设置获取元素 固有属性值 prop()  
 所谓元素固有属性就是元素本身自带的属性，比如` <a>` 元素里面的 href ，比如 `<input> `元素里面的 type。 
 
 - 获取属性语法：`prop("属性")`
 - 设置属性语法：`prop("属性", "属性值")`
 
-#### 设置或获取元素自定义属性值 attr()   
-用户自己给元素添加的属性，我们称为自定义属性。 比如给 `<div>` 添加 index =“1”。   
-改方法也可以获取 H5 自定义属性
+#### 设置获取元素 自定义属性值 attr()   
+用户自己给元素添加的属性，我们称为自定义属性。 比如给 `<div>` 添加 index =“1”。 此方法也可以获取 H5 自定义属性
 
 - 获取属性语法：`attr("属性")  ` // 类似原生 getAttribute()
 - 设置属性语法：`attr("属性", "属性值") ` // 类似原生 setAttribute()
 
 #### 数据缓存 data()  
-data() 方法可以在指定的元素上存取数据，并不会修改 DOM 元素结构。一旦页面刷新，之前存放的数据都将被移除。   
+data() 方法可以在指定的元素上存取数据，并不会修改 DOM 元素结构。一旦页面刷新，之前存放的数据都将被移除。 
+
 同时，还可以读取 HTML5 自定义属性  data-index ，得到的是数字型
 
-- 附加数据语法：`data("name","value") ` // 向被选元素附加数据  
 - 获取数据语法：`date("name") ` //   向被选元素获取数据  
+- 附加数据语法：`data("name","value") ` // 向被选元素附加数据  
 
 ```html
 <head>
@@ -1587,9 +1560,10 @@ data() 方法可以在指定的元素上存取数据，并不会修改 DOM 元�
     <input type="checkbox" name="" id="" checked>
     <div index="1" data-index="2">我是div</div>
     <span>123</span>
+
     <script>
         $(function() {
-            //1. element.prop("属性名") 获取元素固有的属性值
+        //1. element.prop("属性名") 获取元素固有的属性值
             console.log($("a").prop("href"));
             $("a").prop("title", "我们都挺好");
             $("input").change(function() {
@@ -1597,17 +1571,22 @@ data() 方法可以在指定的元素上存取数据，并不会修改 DOM 元�
             });
             // console.log($("div").prop("index"));
 
-            // 2. 元素的自定义属性 我们通过 attr()
+            // button 按钮固有 是可以点击的
+            // 禁用一个按钮，它会变成灰色并且不能再被点击
+            $("button").prop("disabled", true);
+
+        // 2. 元素的自定义属性 我们通过 attr()
             console.log($("div").attr("index")); // 1
             $("div").attr("index", 4);
             console.log($("div").attr("data-index")); // 2
 
-            // 3. 数据缓存 data() 这个里面的数据是存放在元素的内存里面
+        // 3. 数据缓存 data() 这个里面的数据是存放在元素的内存里面
             $("span").data("uname", "andy");
             console.log($("span").data("uname")); // andy
             // 这个方法获取data-index h5自定义属性 第一个 不用写data-  而且返回的是数字型
             console.log($("div").data("index")); // 2
         })
+
     </script>
 </body>
 ```
@@ -1623,20 +1602,52 @@ data() 方法可以在指定的元素上存取数据，并不会修改 DOM 元�
 
 
 ### 内容文本属性值  
-主要针对 元素的内容 还有 表单的值 操作。
+主要针对 `元素的内容` 还有 `表单的值` 操作。
 
-1、普通元素内容 html() ，相当于原生inner HTML  
+1、普通元素内容 html() ，相当于原生 innerHTML。  `常用`
 - `html()  `   // 获取元素的内容  
 - `html("内容") `  // 设置元素的内容
+- `可以添加 HTML 标签`和文本
 
 2、普通元素文本内容 text() ，相当与原生 innerText
 - `text()  `  // 获取元素的文本内容
 - `text("文本内容") ` // 设置元素的文本内容
+- 只能改变文本，`不可以添加HTML标签`
 
 3、表单的值 val()，相当于原生value
 - `val()  `   // 获取表单的值
 - `val("内容") `  // 设置表单的值
 
+```html
+<head>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+        <h3></h3>
+    <div>
+        <span>我是内容</span>
+    </div>
+    <input type="text" value="请输入内容">
+    <script>
+
+        // 1. 获取设置元素内容 html()
+        console.log($("div").html());
+        $("div").html("123");
+        $("h3").html("<em>向往的生活</em>"); // 可以 添加HTML标签
+
+        // 2. 获取设置元素文本内容 text()
+        console.log($("div").text());
+        $("div").text("123");
+        $("h3").text("<em>向往的生活</em>"); // 不可以 添加HTML标签
+
+        // 3. 获取设置表单值 val()
+        console.log($("input").val());
+        $("input").val("123");
+
+    </script>
+</body>
+```
 
 案例：购物车案例模块-增减商品数量  《代码参见文件》    
 核心思路：  
@@ -1658,45 +1669,25 @@ data() 方法可以在指定的元素上存取数据，并不会修改 DOM 元�
 - 用户也可以直接修改表单里面的值，同样要计算小计。 用表单change事件  
 - 用最新的表单内的值 乘以 单价即可  但是还是当前商品小计  
 
-```html
-<head>
-    <script src="jquery.min.js"></script>
-</head>
-
-<body>
-    <div>
-        <span>我是内容</span>
-    </div>
-    <input type="text" value="请输入内容">
-    <script>
-        // 1. 获取设置元素内容 html()
-        console.log($("div").html());
-        // $("div").html("123");
-        // 2. 获取设置元素文本内容 text()
-        console.log($("div").text());
-        $("div").text("123");
-
-        // 3. 获取设置表单值 val()
-        console.log($("input").val());
-        $("input").val("123");
-    </script>
-</body>
-```
-
 ### 元素操作  
-主要是遍历、创建、添加、删除元素操作。
+主要是`遍历、创建、添加、删除、移动、克隆元素`操作。
 
 #### 遍历元素  
 jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给同一类元素做不同操作，就需要用到遍历。
 
-1、语法一：`$("div").each(function (index, domEle) { xxx; })  `       
-- each() 方法遍历匹配的每一个元素。主要用DOM处理。 each 每一个
-- 里面的回调函数有2个参数：  index 是每个元素的索引号;  demEle 是每个DOM元素对象，不是jquery对象
-- 所以要想使用jquery方法，需要给这个dom元素转换为jquery对象  $(domEle)
+1、语法一：`$("div").each(function (index, domEle) { xxx; })`  
 
-2、语法二：`$.each(object，function (index, element) { xxx; })`    
-- $.each()方法可用于遍历任何对象。主要用于数据处理，比如数组，对象
-- 里面的函数有2个参数：  index 是每个元素的索引号;  element  遍历内容
+- `each() 方法`遍历匹配的每一个元素。主要用DOM处理。 each每一个
+
+- 里面的回调函数有2个参数： index 是每个元素的索引号;  domEle 是每个DOM元素对象，不是jquery对象
+
+- 所以要想使用jquery方法，需要给这个dom元素转换为jquery对象  `$(domEle)`
+
+2、语法二：`$.each(object，function (index, element) { xxx; })`  
+
+- `$.each()`方法可用于遍历任何对象。主要用于数据处理，比如数组，对象
+
+- 里面的函数有2个参数： index 是每个元素的索引号;  element 遍历内容
 
 ```html
 <head>
@@ -1711,6 +1702,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
     <div>2</div>
     <div>3</div>
     <script>
+
         $(function() {
             // $("div").css("color", "red");
             // 如果针对于同一类元素做不同操作，需要用到遍历元素（类似for，但是比for强大）
@@ -1720,25 +1712,22 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
             var arr = ["red", "green", "blue"];
             $("div").each(function(i, domEle) {
                 // 回调函数第一个参数一定是索引号  可以自己指定索引号号名称
-                // console.log(index);
-                // console.log(i);
                 // 回调函数第二个参数一定是 dom元素对象 也是自己命名
-                // console.log(domEle);
-                // domEle.css("color"); dom对象没有css方法
                 $(domEle).css("color", arr[i]);
                 sum += parseInt($(domEle).text());
             })
             console.log(sum);
 
-            // 2. $.each() 方法遍历元素 主要用于遍历数据，处理数据
-            // $.each($("div"), function(i, ele) {
-            //     console.log(i);
-            //     console.log(ele);
-            // });
-            // $.each(arr, function(i, ele) {
-            //     console.log(i);
-            //     console.log(ele);
-            // })
+            // 2. $.each() 方法遍历元素 数组 对象
+            $.each($("div"), function(i, ele) {
+                console.log(i);
+                console.log(ele);
+            });
+
+            $.each(arr, function(i, ele) {
+                console.log(i);
+                console.log(ele);
+            })
 
             $.each({
                 name: "andy",
@@ -1748,6 +1737,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
                 console.log(ele); // 输出的是 andy  18 属性值
             })
         })
+
     </script>
 </body>
 ```
@@ -1769,23 +1759,23 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 
 一、内部添加  
 
-内部添加元素，生成之后，它们是父子关系。
+内部添加元素，生成之后，它们是`父子关系`。
 
 1、`element.append("内容")  `  
-- 把内容放入匹配元素内部最后面，类似原生 appendChild。
+- 把内容放入匹配元素内部最后面。作为最后一个儿子
 
-2、`element.prepend("内容")  `
-- 把内容放入匹配元素内部最前面。
+2、`element.prepend("内容")  ` 
+- 把内容放入匹配元素内部最前面。作为第一个儿子
 
 二、外部添加  
 
-外部添加元素，生成之后，他们是兄弟关系。
+外部添加元素，生成之后，他们是`兄弟关系`。
 
 1、`element.after("内容") ` 
-- 把内容放入目标元素后面  
+- 把内容放入目标元素后面。  
 
 2、`element.before("内容")` 
-- 把内容放入目标元素前面
+- 把内容放入目标元素前面。
 
 #### 删除元素
 
@@ -1793,7 +1783,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 - 删除匹配的元素（本身），即删除元素本身。
 
 2、`element.empty()`
-- 删除匹配的元素集合中所有的子节点
+- 删除匹配元素集合中的所有子节点
 
 3、`element.html("") `
 - 清空匹配的元素内容
@@ -1810,25 +1800,27 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
     </ul>
     <div class="test">我是原先的div</div>
     <script>
+
         $(function() {
             // 1. 创建元素
             var li = $("<li>我是后来创建的li</li>");
 
             // 2. 添加元素
-            // (1) 内部添加
-            // $("ul").append(li);  内部添加并且放到内容的最后面 
-            $("ul").prepend(li); // 内部添加并且放到内容的最前面
+                // (1) 内部添加  父子关系
+                $("ul").append(li);  // 内部添加并且放到内容的最后面 
+                $("ul").prepend(li); // 内部添加并且放到内容的最前面
 
-            // (2) 外部添加
-            var div = $("<div>我是后妈生的</div>");
-            // $(".test").after(div);
-            $(".test").before(div);
+                // (2) 外部添加  兄弟关系
+                var div = $("<div>我是后妈生的</div>");
+                $(".test").after(div);
+                $(".test").before(div);
 
             // 3. 删除元素
-            // $("ul").remove(); 可以删除匹配的元素 自杀
-            // $("ul").empty(); // 可以删除匹配的元素里面的子节点 孩子
+            $("ul").remove(); // 可以删除匹配的元素 自杀 即整个ul都被删掉
+            $("ul").empty(); // 可以删除匹配的元素里面的子节点 孩子
             $("ul").html(""); // 可以删除匹配的元素里面的子节点 孩子
         })
+
     </script>
 </body>
 ```
@@ -1848,6 +1840,27 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 3、小的复选框点击： 如果是选中状态，则当前商品添加背景，否则移除背景  
 4、这个背景，可以通过类名修改，添加类和删除类  
 
+#### 移动元素
+- 将元素从一个地方`移动到`另一个地方。（`加符号`）
+- `element.appendTo('.content');` 
+- 即 将 element 移动到 content 中，按内容顺序来放在后面。
+- `原来内容里 没有element了`
+
+```js
+// 将 target2 移动到 right-well中
+$('#target2').appendTo("#right-well");
+```
+
+#### 克隆元素
+- 将元素从一个地方`复制到`另一个地方。（`加符号`）
+- `element.clone().appendTo('.content');` 
+- 即 将 element 复制到 content中，按内容顺序来放在后面。
+- `原来内容里 还有element`
+
+```js
+// // 将 target5 复制到 left-well中
+$("#target5").clone().appendTo("#left-well");
+```
 
 ### 尺寸、位置操作
 #### 尺寸操作
@@ -1879,7 +1892,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
         $(function() {
             // 1. width() / height() 获取设置元素 width和height大小 
             console.log($("div").width());
-            // $("div").width(300);
+            $("div").width(300);
 
             // 2. innerWidth() / innerHeight()  获取设置元素 width和height + padding 大小 
             console.log($("div").innerWidth());
@@ -1897,25 +1910,26 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 #### 位置操作  
 位置主要有三个： `offset()、position()、scrollTop()/scrollLeft()`
 
-1、`offset()`设置或获取元素偏移
+1、offset()设置或获取元素 偏移
 
-- offset() 方法设置或返回被选元素相对于`文档`的偏移坐标，跟父级没有关系。
-- 该方法有2个属性 left、top
-- offset().top  用于获取距离文档顶部的距离，offset().left 用于获取距离文档左侧的距离。
+- offset() 方法 设置或返回被选元素`相对于 文档`的偏移坐标，跟父级没有关系。
+- 该方法`有2个属性` left、top
+- `offset().top`  用于获取距离文档顶部的距离
+- `offset().left` 用于获取距离文档左侧的距离。
 - 可以设置元素的偏移：offset({ top: 10, left: 30 });
 
-2、`position() `获取元素偏移
+2、position() 获取元素偏移
 
-- position() 方法用于返回被选元素相对于`带有定位的父级`偏移坐标，如果父级都没有定位，则以文档为准。
+- position() 方法用于返回被选元素`相对于 带有定位的父级`偏移坐标，如果父级都没有定位，则以文档为准。
 - 该方法有2个属性 left、top
-- position().top 用于获取距离定位父级顶部的距离，position().left 用于获取距离定位父级左侧的距离。
-- 该方法只能获取。
+- `position().top` 用于获取距离定位父级顶部的距离
+- `position().left` 用于获取距离定位父级左侧的距离。
+- 该方法`只能获取`。
 
-3. scrollTop()/scrollLeft() 设置或获取元素被卷去的头部和左侧
+3. scrollTop()/scrollLeft() 设置或获取元素 被卷去的头部和左侧
 
-- scrollTop() 方法设置或返回被选元素被卷去的头部。
+- `scrollTop()`或`scrollLeft() ` 方法设置或返回被选元素被卷去的头部。
 - 不跟参数是获取，参数为不带单位的数字则是设置被卷去的头部。
-
 
 ```html
 <head>
@@ -1952,15 +1966,16 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
     </div>
     <script>
         $(function() {
-            // 1. 获取设置距离文档的位置（偏移） offset
+        // 1. 获取设置距离文档的位置（偏移） offset
             console.log($(".son").offset());
             console.log($(".son").offset().top);
-            // $(".son").offset({
-            //     top: 200,
-            //     left: 200
-            // });
-            // 2. 获取距离带有定位父级位置（偏移） position   如果没有带有定位的父级，则以文档为准
-            // 这个方法只能获取不能设置偏移
+            $(".son").offset({
+                top: 200,
+                left: 200
+            });
+
+        // 2. 获取距离带有定位父级位置（偏移） position   如果没有带有定位的父级，则以文档为准
+            // 这个方法只能获取不能设置
             console.log($(".son").position());
             // $(".son").position({
             //     top: 200,
@@ -2006,6 +2021,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
         $(function() {
             $(document).scrollTop(100);
             // 被卷去的头部 scrollTop()  / 被卷去的左侧 scrollLeft()
+
             // 页面滚动事件
             var boxTop = $(".container").offset().top;
             $(window).scroll(function() {
@@ -2017,6 +2033,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
                     $(".back").fadeOut();
                 }
             });
+
             // 返回顶部
             $(".back").click(function() {
                 // $(document).scrollTop(0);
@@ -2031,11 +2048,6 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
     </script>
 </body>
 ```
-
-
-
-
-
 
 案例：带有动画的返回顶部  《代码参见文件》  
 核心原理：   
@@ -2065,11 +2077,11 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 
 语法： 
 - `element.事件(function(){}) `       
-- `$(“div”).click(function(){  事件处理程序 }) `      
+- `$(“div”).click(function(){ 事件处理程序 }) `      
  
-2、其他事件和原生基本一致    
+2、事件和原生基本一致    
 
-比如：`mouseover、mouseout、blur、focus、change、keydown、keyup、resize、scroll` 等
+比如：`click、mouseover、mouseout、blur、focus、change、keydown、keyup、resize、scroll` 等
 
 ```html
 <head>
@@ -2102,13 +2114,13 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
     <script>
         $(function() {
             // 1. 单个事件注册
-            // $("div").click(function() {
-            //     $(this).css("background", "purple");
-            // });
+            $("div").click(function() {
+                $(this).css("background", "purple");
+            })
 
-            // $("div").mouseenter(function() {
-            //     $(this).css("background", "skyblue");
-            // });
+            $("div").mouseenter(function() {
+                $(this).css("background", "skyblue");
+            });
         })
     </script>
 </body>
@@ -2117,7 +2129,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 ### 事件处理
 #### on() 绑定事件
 
-1、on() 方法，在匹配元素上绑定一个或多个事件的事件处理函数  
+1、on() 方法，在匹配元素上`绑定一个或多个事件`的事件处理函数  
 - 语法：`element.on(events,[selector],fn) `      
 - 参数：  
     - events:一个或多个用空格分隔的事件类型，如"click"或"keydown"  
@@ -2159,26 +2171,24 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
     </ol>
     <script>
         $(function() {
-            // 2. 事件处理on
-
-            // (1) on可以绑定1个或者多个事件处理程序
-            // $("div").on({
-            //     mouseenter: function() {
-            //         $(this).css("background", "skyblue");
-            //     },
-            //     click: function() {
-            //         $(this).css("background", "purple");
-            //     },
-            //     mouseleave: function() {
-            //         $(this).css("background", "blue");
-            //     }
-            // });
+        // (1) on() 可以绑定1个或者多个事件处理程序
+            $("div").on({
+                mouseenter: function() {
+                    $(this).css("background", "skyblue");
+                },
+                click: function() {
+                    $(this).css("background", "purple");
+                },
+                mouseleave: function() {
+                    $(this).css("background", "blue");
+                }
+            });
             // 如果事件处理程序相同 可这样写 
             $("div").on("mouseenter mouseleave", function() {
                 $(this).toggleClass("current");
             });
 
-            // (2) on可以实现事件委托（委派）
+        // (2) on可以实现事件委托（委派）
             // $("ul li").click();
             $("ul").on("click", "li", function() {
                 alert(11);
@@ -2186,7 +2196,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
             // click 是绑定在ul 身上的，但是 触发的对象是 ul 里面的小li
             // 在此之前有bind(), live() delegate()等方法来处理事件绑定或者事件委派，最新版本的请用on替代他们。
 
-            // (3) on可以给未来动态创建的元素绑定事件
+        // (3) on可以给未来动态创建的元素绑定事件
             // $("ol li").click(function() {
             //     alert(11);
             // })
@@ -2287,7 +2297,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 ```
 
 #### off() 解绑事件
-- off() 方法可以移除通过 on() 方法添加的事件处理程序。
+- off() 方法可以`移除通过 on() 方法添加的事件`处理程序。
 
 ```html
 <head>
@@ -2300,6 +2310,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
     </style>
     <script src="jquery.min.js"></script>
     <script>
+
         $(function() {
             $("div").on({
                 click: function() {
@@ -2312,8 +2323,9 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
             $("ul").on("click", "li", function() {
                 alert(11);
             });
+
             // 1. 事件解绑 off 
-            // $("div").off();  // 这个是解除了div身上的所有事件
+            $("div").off();  // 这个是解除了div身上的所有事件
             $("div").off("click"); // 这个是解除了div身上的点击事件
             $("ul").off("click", "li"); // 解绑事件委托
             
@@ -2322,6 +2334,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
                 alert(11);
             })
         })
+
     </script>
 </head>
 
@@ -2336,8 +2349,8 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 </body>
 ```
 
-#### 自动触发事件 trigger()     
-有些事件希望自动触发, 比如轮播图自动播放功能跟点击右侧按钮一致。可以利用定时器自动触发右侧按钮点击事件，不必鼠标点击触发。
+#### trigger() 自动触发事件      
+有些`事件希望自动触发`, `比如轮播图自动播放功能跟点击右侧按钮一致`。可以利用定时器自动触发右侧按钮点击事件，不必鼠标点击触发。
 
 ```html
 <head>
@@ -2350,6 +2363,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
     </style>
     <script src="jquery.min.js"></script>
     <script>
+
         $(function() {
             $("div").on("click", function() {
                 alert(11);
@@ -2357,21 +2371,21 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 
             // 自动触发事件
             // 1. 元素.事件()
-            // $("div").click();会触发元素的默认行为
-            // $("input").click("focus");
+            $("div").click();会触发元素的默认行为
+            $("input").click("focus");
 
             // 2. 元素.trigger("事件")
-            // $("div").trigger("click"); // 会触发元素的默认行为
+            $("div").trigger("click"); // 会触发元素的默认行为
             $("input").trigger("focus");
 
-            // 3. 元素.triggerHandler("事件") 就是不会触发元素的默认行为
+            // 3. 元素.triggerHandler("事件")  就是不会触发元素的默认行为
             $("div").triggerHandler("click");
             $("input").on("focus", function() {
-                $(this).val("你好吗");
+                $(this).val("你好吗");  // val("内容") 设置表单的值
             });
             $("input").triggerHandler("focus");
-
         });
+
     </script>
 </head>
 
@@ -2383,7 +2397,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 
 ### 事件对象  
 事件被触发，就会有事件对象的产生。
-- `element.on(events,[selector],function(event) {}) `
+- `element.on(events,[selector],function(event){}) `
 - 阻止默认行为：event.preventDefault()   或者 return  false 
 - 阻止冒泡： event.stopPropagation()      
 
@@ -2401,8 +2415,8 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
         $(function() {
             $(document).on("click", function() {
                 console.log("点击了document");
-
             })
+
             $("div").on("click", function(event) {
                 // console.log(event);
                 console.log("点击了div");
@@ -2419,42 +2433,42 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 
 ## jQuery 其他方法
 ### 拷贝对象  
-如果想要把某个对象拷贝（合并） 给另外一个对象使用，此时可以使用 $.extend() 方法
+如果想要`把某个对象拷贝（合并） 给另外一个对象`使用，此时可以使用 $.extend() 方法
 
 一、语法：`$.extend([deep], target, object1, [objectN]) `  
 
 二、参数:
 1. deep: 如果设为true 为深拷贝， 默认为false  浅拷贝 
-2. target: 要拷贝的目标对象
+2. target: 要拷贝的目标对象。（`将object1拷贝到target`）
 3. object1:待拷贝到第一个对象的对象。
 4. objectN:待拷贝到第N个对象的对象。
-5. 浅拷贝，是把被拷贝的对象复杂数据类型中的地址拷贝给目标对象，修改目标对象`会影响`被拷贝对象。
-6. 深拷贝，前面加true， 完全克隆(拷贝的对象,而不是地址)，修改目标对象`不会影响`被拷贝对象。
-
+5. `浅拷贝`，是把被拷贝的对象复杂数据类型中的地址拷贝给目标对象，修改目标对象会影响被拷贝对象。(`会影响object1`)。
+6. `深拷贝`，前面加true， 完全克隆(拷贝的对象,而不是地址)，修改目标对象不会影响被拷贝对象。(`不会影响object1`)。
 
 ```html
 <head>
     <script src="jquery.min.js"></script>
     <script>
         $(function() {
-            // var targetObj = {};
-            // var obj = {
-            //     id: 1,
-            //     name: "andy"
-            // };
-            // // $.extend(target, obj);
-            // $.extend(targetObj, obj);
-            // console.log(targetObj);
-            // var targetObj = {
-            //     id: 0
-            // };
-            // var obj = {
-            //     id: 1,
-            //     name: "andy"
-            // };
-            // // $.extend(target, obj);
-            // $.extend(targetObj, obj);
-            // console.log(targetObj); // 会覆盖targetObj 里面原来的数据
+            var targetObj = {};
+            var obj = {
+                id: 1,
+                name: "andy"
+            };
+            // $.extend(target, obj);
+            $.extend(targetObj, obj);
+            console.log(targetObj);
+            var targetObj = {
+                id: 0
+            };
+            var obj = {
+                id: 1,
+                name: "andy"
+            };
+
+            // $.extend(target, obj);
+            $.extend(targetObj, obj);
+            console.log(targetObj); // 会覆盖targetObj 里面原来的数据
             var targetObj = {
                 id: 0,
                 msg: {
@@ -2468,23 +2482,23 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
                     age: 18
                 }
             };
-            // // $.extend(target, obj);
-            // $.extend(targetObj, obj);
-            // console.log(targetObj); // 会覆盖targetObj 里面原来的数据
+            // $.extend(target, obj);
+            $.extend(targetObj, obj);
+            console.log(targetObj); // 会覆盖targetObj 里面原来的数据
 
-            // // 1. 浅拷贝把原来对象里面的复杂数据类型地址拷贝给目标对象
-            // targetObj.msg.age = 20;
-            // console.log(targetObj);
-            // console.log(obj);
+        // 1. 浅拷贝把原来对象里面的复杂数据类型地址拷贝给目标对象
+            targetObj.msg.age = 20;
+            console.log(targetObj);
+            console.log(obj);
 
-            // 2. 深拷贝把里面的数据完全复制一份给目标对象 如果里面有不冲突的属性,会合并到一起 
+        // 2. 深拷贝把里面的数据完全复制一份给目标对象 如果里面有不冲突的属性,会合并到一起 
             $.extend(true, targetObj, obj);
             // console.log(targetObj); // 会覆盖targetObj 里面原来的数据
             targetObj.msg.age = 20;
             console.log(targetObj); // msg :{sex: "男", age: 20}
             console.log(obj);
-
         })
+
     </script>
 </head>
 
@@ -2497,7 +2511,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 
 一、问题概述：
 
-- jQuery使用`$`作为标示符，随着jQuery的流行,其他 js 库也会用这`$`作为标识符， 这样一起使用会引起冲突。
+- jQuery使用`$`作为标识符，随着jQuery的流行,其他 js 库也会用这`$`作为标识符， 这样一起使用会引起冲突。
 
 二、客观需求：
 
@@ -2536,7 +2550,7 @@ jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给
 ### jQuery 插件
 
 jQuery 功能比较有限，想要更复杂的特效效果，可以借助于 jQuery 插件完成。 
-注意: 这些插件也是依赖于jQuery来完成的，所以必须要先引入jQuery文件，因此也称为 jQuery 插件。
+注意: 这些插件也是依赖于jQuery来完成的，所以必须要先引入`jQuery文件`，因此也称为 jQuery 插件。
 
 一、jQuery 插件常用的网站：
 1.  jQuery 插件库  <http://www.jq22.com/>     

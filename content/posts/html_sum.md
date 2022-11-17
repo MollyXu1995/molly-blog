@@ -290,7 +290,7 @@ JavaScript</div>
 | 属性名称 | 描述 |
 | :-- | :--|
 | name | 表单的名称 |
-| action | 表单数据接收地址 |
+| `action` | 表单数据接收地址 |
 | target | 打开 url 的方式，_blank 新窗口，_self 当前窗口 |
 | method | 数据传送方法，get:通过 url 地址传送参数,网址中可以看到数据，post:后台传送 |
 | enctype |	发送前如何将数据进行编码，仅与 method=“post"配对使用 |
@@ -303,9 +303,9 @@ JavaScript</div>
 
 | 属性名称 | 描述 |
 | :-- | :-- |
-| type | 元素的类型，如 text 文本框、radio 单选按钮、select 下拉框等 |
-| name | 元素的名称，主要用于服务端数据传送；对单选框有分组功能，有相同name属性值的单选框为一组，一组中只能有一个被选中 |
-|placeholder|占位符，提示用户输入内容的文本|
+| `type `| 元素的类型，如 text 文本框、radio 单选按钮、select 下拉框等 |
+| `name `| 元素的名称，主要用于服务端数据传送；对单选框有分组功能，有相同name属性值的单选框为一组，一组中只能有一个被选中 |
+|`placeholder`|占位符，提示用户输入内容的文本|
 | checked | 默认先选中的选项|
 | value	| 元素的默认值，可当占位符 |
 | multiple	| type属性文件选择中，用于多文件选择 |
@@ -317,6 +317,7 @@ JavaScript</div>
 
 - type属性值  
 input标签通过type属性值的不同，展示不同效果
+
 ```html
 <input type="">
 ```
@@ -324,8 +325,8 @@ input标签通过type属性值的不同，展示不同效果
 |:--| :-- | :-- |
 |input|text|文本框，输入单行文本|
 |input|password|密码框，用于输入密码|
-|input|radio|单选框，多选一|
-|input|checkbox|多选框，多选多|
+|input|`radio`|单选框，多选一|
+|input|`checkbox`|多选框，多选多|
 |input|file|文件选择，用于之后上传文件|
 |input|submit|提交按钮，用于提交|
 |input|reset|重置按钮，用于重置|
@@ -342,6 +343,7 @@ input标签通过type属性值的不同，展示不同效果
 <!-- 单选按钮 -->
 <input type="radio" name="sex" value="male">男
 <input type="radio" name="sex" value="female" checked>女
+<!-- 有相同name属性值的单选框为一组，一组中只能有一个被选中 -->
 <!-- 用label标签，文字同按钮有同样效果，也可直接点击文字选择 -->
 <label><input type="radio" name="sex" value="male">男</label>
 
