@@ -270,7 +270,8 @@ $('#form1').serialize()
 #### $.get()函数的语法  
 一、语法  
 - 函数的功能单一，专门用来发起 get 请求，从而将服务器上的资源请求到客户端来进行使用。
-- 语法如下：`$.get(url, [data], [callback])`
+- 语法如下：`$.get(url, [data], [callback], [type])`
+- type:返回内容格式，xml, html, script, json, text, _default。
 
 其中，三个参数各自代表的含义如下：
 
@@ -293,7 +294,7 @@ $.get('http://www.liulongbin.top:3006/api/getbooks', { id: 1 }, function(res) 
 #### $.post()函数的语法
 一、语法
 - jQuery 中 $.post() 函数的功能单一，专门用来发起 post 请求，从而向服务器提交数据。
-- 语法如下：`$.post(url, [data], [callback])`
+- 语法如下：`$.post(url, [data], [callback], [type])`
 
 其中，三个参数各自代表的含义如下：
 
@@ -1028,6 +1029,25 @@ jQuery 中的 JSONP，也是通过 `<script>` 标签的 src 属性实现跨域�
 防抖：如果事件被频繁触发，防抖能保证只有最后一次触发生效！前面 N 多次的触发都会被忽略！  
 节流：如果事件被频繁触发，节流能够减少事件触发的频率，因此，节流是有选择性地执行一部分事件！  
 
+## 什么是URL
+一、概念  
+
+- 对于超文本和HTTP，URL是 Web 的关键概念之一。它是浏览器用来检索网络上任何已发布资源的机制。
+
+- URL代表统一资源定位器。URL 只不过是 Web 上给定的唯一资源的地址。理论上，每个有效的 URL 都指向一个唯一的资源。此类资源可以是 HTML 页面、CSS 文档、图像等
+
+二、组成
+
+一个 URL 由不同的部分组成，一些是必需的，另一些是可选的。重要组成部分如下：
+
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221120/image.6puavl1kg980.webp)
+
+> 可以把 URL 想象成一个普通的邮政邮件地址：方案代表您要使用的邮政服务，域名是城市或城镇，端口就像邮政编码；该路径代表您的邮件应该投递的建筑物；参数表示额外信息，例如建筑物中的公寓数量；最后，锚点代表您将邮件发送给的实际人。
+
+三、详细介绍：  
+
+{{< card "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL" >}}  
+
 
 ## HTTP协议
 ### HTTP协议简介   
@@ -1059,6 +1079,14 @@ HTTP 协议即超文本传送协议 (HyperText Transfer Protocol) ，它规定�
 HTTP 协议采用了`请求/响应`的交互模型。  
 
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.5jdg97b885g0.webp)
+
+
+五、通过`jQuery中的Ajax`，`来执行HTTP请求里规定的地址 url`
+```js
+$.get(url, [data], [callback], [type]);
+
+$.post(url, [data], [callback], [type]);
+```
 
 ### HTTP请求
 
