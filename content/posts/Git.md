@@ -5,7 +5,7 @@ tags: ['Command-line Tool']
 series: ['前端学习之旅']
 ---
 
-## 关于版本控制
+## 版本控制系统
 一、版本控制软件（系统）  
 - 版本控制软件是一个用来记录文件变化，以便将来查阅特定版本修订情况的系统，因此有时也叫做“`版本控制系统`”。把手工管理文件版本的方式，改为由软件管理文件的版本；这个负责`管理文件版本的软件`，叫做“版本控制软件”。
 
@@ -26,6 +26,7 @@ series: ['前端学习之旅']
 - 补足了以上两者的缺点
 - 联网运行，支持多人协作开发；性能优秀、用户体验好
 - 典型代表：`Git`
+- Git是用C语言开发的
 
 ## Git
 ### Git概念
@@ -55,11 +56,15 @@ Git 是一个`开源的分布式版本控制系统`，是目前世界上最先�
 
 ### Git的安装与配置
 一、下载  
-- 在开始使用 Git 管理项目的版本之前，需要将它安装到计算机上。  
-- 网址：<https://git-scm.com/downloads>
+- 在开始使用 Git 管理项目的版本之前，需要将它安装到计算机上。
+
+- 在Windows上使用Git，可以从Git官网直接下载安装程序，然后按默认选项安装即可。网址：<https://git-scm.com/downloads>
+
+- 安装完成后，在开始菜单里找到 “Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！
 
 二、配置用户信息    
 - 安装完 Git 之后，要做的第一件事就是`设置自己的用户名和邮件地址`。因为通过 Git 对项目进行版本管理的时候，Git 需要使用这些基本信息，来记录是谁对项目进行了操作。  
+
 - 注意：如果使用了 --global 选项，那么该命令只需要运行一次，即可永久生效。
 
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.4hyd5p092lg0.webp)
@@ -69,6 +74,7 @@ Git 是一个`开源的分布式版本控制系统`，是目前世界上最先�
 - 这个文件是 Git 的全局配置文件，配置一次即可永久生效。可以使用记事本打开此文件，从而查看自己曾经对 Git 做了哪些全局性的配置。
 
 四、检查配置信息  
+
 除了使用记事本查看全局的配置信息之外，还可以运行如下的终端命令，快速的查看 Git 的全局配置信息：
 
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.pejupmzg6.webp)
@@ -121,67 +127,34 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 
 六、忽略文件  
 
-一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。 在这种情况下，我们可以创建一个名为 .gitignore 的配置文件，列出要忽略的文件的匹配模式。
+一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。 在这种情况下，我们可以创建一个名为 `.gitignore 的配置文件`，列出要忽略的文件的匹配模式。
 
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1ogrd69uxdkw.webp)
 
+七、搭建Git服务器  
 
-```js
-// 终端命令 //
+- GitHub就是一个免费托管开源代码的远程仓库。但是对于某些视源代码如生命的商业公司来说，既不想公开源代码，又舍不得给GitHub交保护费，那就只能自己搭建一台Git服务器作为私有仓库使用。
 
-// 配置Git用户信息
-git config --global user.name " MollyXu1995"
-git config --global user.email "MollyXu1995@gmail.com"
-// 查看所有的全局配置项
-git config  --list --global
-// 查看指定的全局配置项
-git config user.name
-git config user.email
-// 在浏览器中打开帮助手册
-git help config
-// 获得更简明的帮助“help”输出
-git config -h
+- 搭建Git服务器需要准备一台运行Linux的机器，强烈推荐用Ubuntu或Debian
 
-// 查看文件处于什么状态
-git status 
-// 查看文件处于什么状态 精简方式
-git status -s 
+八、使用SourceTree  
 
-// 1.跟踪新文件；2.已跟踪的、且已修改的文件放到暂存区；3.把有冲突的文件标记为已解决状态
-git add 文件名
+- Git有很多图形界面工具，这里我们推荐SourceTree，它是由Atlassian开发的免费Git图形界面工具（GUI工具），可以操作任何Git库。
 
-// 提交更新 将暂存区中的文件，提交到 Git 仓库
-git commit 
-// 提交更新 并对提交的更新内容做进一步的描述
-git commit -m "提交描述"
-// 跳过暂存区，将工作区中已跟踪修改的文件 直接提交到 Git 仓库
-git commit -a -m "提交描述"
+- 首先从官网下载SourceTree并安装，然后直接运行SourceTree。
 
-// 把对工作区中的文件，还原成 Git 仓库中所保存的版本
-// 工作区中文件所有的修改会丢失，且无法恢复。//慎重操作！// 
-git checkout -- 文件名
+- 第一次运行SourceTree时，SourceTree并不知道我们的Git库在哪。如果本地已经有了Git库，直接从资源管理器把文件夹拖拽到SourceTree上，就添加了一个本地Git库：
 
-// 将所有新增和修改的文件 全部加入暂存区
-git add .
+- 也可以选择“New”-“Clone from URL”直接从远程克隆到本地。
 
-// 从暂存区中 取消对文件的暂存
-git reset HEAD 要移除的文件名
+九、标签管理 
+- 创建标签
+- 操作标签
 
-// 从 Git 仓库和工作区中同时移除对应的文件
-git rm -f 文件名
-// 只从 Git 仓库中移除指定的文件，但保留工作区中对应的文件
-git rm --cached 文件名
-
-// 查看提交历史 最近的排在最上面
-git log
-// 查看提交历史 只展示最新的2条提交 数字可改
-git log -2
-```
-
-### Git 分支  
-#### Git本地分支操作
+### Git 分支操作
 分支在实际开发中的作用：  
 - 在进行多人协作开发的时候，为了防止互相干扰，提高协同开发的体验，建议每个开发者都基于分支进行项目功能的开发，例如：
+
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.5ew9kp6j8rw0.webp)
 
 一、`master 主分支`
@@ -194,68 +167,203 @@ git log -2
 - 由于程序员不能直接在 master 分支上进行功能的开发，所以就有了功能分支的概念。
 - 功能分支指的是专门`用来开发新功能的分支`，它是临时从 master 主分支上分叉出来的，当新功能开发且测试完毕后，最终需要合并到 master 主分支上。
 
+
+三、分支管理策略  
+在实际开发中，我们应该按照几个基本原则进行分支管理：  
+
+- 首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
+
+- 那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；
+
+- 你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。
+
+###  版本库
+
+- 工作区就是在电脑里能看到的目录，比如我的`项目文件夹就是一个工作区`
+
+- `工作区有一个隐藏目录.git`，这个不算工作区，而`是Git的版本库`。
+
+- `Git的版本库里`存了很多东西，其中最重要的就是称为stage（或者叫index）的`暂存区`，还有Git为我们自动创建的第一个`分支`master，以及指向master的一个`指针叫HEAD`。
+
+- Git比其他版本控制系统设计得优秀，因为`Git跟踪并管理的是修改，而非文件`
+
+- 每次修改，如果不用git add到暂存区，那就不会加入到commit中。
+
+
+git add 将工作区文件 添加到 暂存区：
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.2rotyv8hhv80.webp)
+
+git commit 将暂存区文件 提交到 Git 仓库分支：
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.7d2y888644w0.webp)
+
+### 命令行
+
+Git命令：
 ```js
-// 查看当前 Git 仓库中所有的分支列表 
+// -----------------------
+// 1、配置Git用户信息
+    git config --global user.name " MollyXu1995"
+    git config --global user.email "MollyXu1995@gmail.com"
+// 2、查看所有的全局配置项
+    git config  --list --global
+// 3、查看指定的全局配置项
+    git config user.name
+    git config user.email
+// 4、在浏览器中打开帮助手册
+    git help config
+// 5、获得更简明的帮助“help”输出
+    git config -h
+// 6、查看文件处于什么状态
+    git status 
+// 7、查看文件处于什么状态 精简方式
+    git status -s 
+
+// -----------------------
+// 1、创建一个仓库，首先，选择一个合适的地方，创建一个空目录仓库 文件夹：
+    mkdir 文件夹名
+    cd 文件夹名
+    // pwd命令用于显示当前仓库目录位置 
+    pwd
+
+// 2、把这个目录变成 Git可以管理的仓库 
+     git init
+    // 显示 .git目录 。默认 是隐藏的
+     ls -ah
+
+// 3、把一个文件放到 Git仓库 
+
+    // （1）把文件添加到仓库。可反复多次使用 或 全部添加 . 
+    // 即也可理解 把文件 放到 暂存区。 此命令是没有返回命令信息显示的
+        git add 文件名
+        git add 文件1 文件2 文件3
+        git add .
+
+    // （2）把文件提交到仓库。
+    // 即也可理解 把暂存区的所有文件 提交到当前分支 master
+        // 提交更新 将暂存区中的文件，提交到 Git 仓库
+        git commit 
+        // 提交更新 并对提交的更新内容做进一步的描述
+        git commit -m "提交描述"
+
+// -----------------------
+// 1、查看提交的历史记录 从最近到最远的提交日志
+    git log
+    // 只查看最新的2条提交记录 数字可改
+    git log -2
+    // 精简方式 展示历史记录
+    git log --pretty=oneline
+
+// 2、文件 回退到之前的版本 HEAD指向哪个版本号，就相当于把当前版本定位在哪。回退到了某一版本，之前的当前版本就没有了
+    // 回退到 上一个版本 HEAD^
+    git reset --hard HEAD^
+    // 回退到 上上一个版本 HEAD^^
+    git reset --hard HEAD^^
+    // 回退到 往上100个版本 HEAD~100
+    git reset --hard HEAD~100
+    // 回退到 commit id 为 1094a 的版本
+    git reset --hard 1094a
+
+// 3、查看命令历史 以便确定要回到未来的哪个版本 即得到 commit id号 
+    git reflog
+
+// 4、查看工作区和版本库里面最新版本的区别：
+    git diff HEAD -- 文件名
+
+// -----------------------
+// 1、把文件在工作区的修改全部撤销。即让这个文件回到最近一次 git commit或git add时的状态。//无法恢复 慎重操作！// 
+    // 场景一：改后还没有放到暂存区，现在撤销修改，就回到和版本库一模一样的状态；
+    // 场景二：已经添加到暂存区后，又作了修改，现在撤销修改，就回到添加到暂存区后的状态。
+    // 场景三：添加到了暂存区时，想丢弃修改，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作
+    // 场景四：已经提交到版本库时，想要撤销本次提交，参考版本回退，不过前提是没有推送到远程库。
+    // 用版本库里的版本替换工作区的版本
+    git checkout -- 文件名
+
+// -----------------------
+// 1、从暂存区中 取消对文件的暂存
+git reset HEAD 要移除的文件名
+
+// 2、从工作区中删除文件
+rm 文件名
+
+// 3、从 Git仓库中删除文件
+git rm 文件名
+
+// 4、从 工作区 和 Git 仓库中同时删除对应的文件
+git rm -f 文件名
+
+// 5、只从 Git 仓库中移除指定的文件，但保留工作区中对应的文件
+git rm --cached 文件名
+```
+
+Git分支命令：
+```js
+// ------------查看分支
+// 1、查看当前 Git 仓库中所有的分支列表 
 // 分支名字前面的 * 号表示当前所处的分支
-git branch
+    git branch
 
-// 基于当前分支，创建一个新的分支
+// ------------创建分支
+// 2、基于当前分支，创建一个新的分支
 // 执行完创建分支的命令后，当前所指向的还是master分支，另需切换
-git branch 分支名称
+    git branch 分支名称
+    // 切换到指定的分支上进行开发
+    git switch 分支名称 
+// 创建指定名称的新分支，并立即切换到新分支上开发。相当于上面两条的合并 
+    git switch -c 分支名称
 
-// 切换到指定的分支上进行开发
-git checkout 分支名称
-
-// 创建指定名称的新分支，并立即切换到新分支上
-git checkout -b 分支名称
-
-// 功能分支的代码开发测试完毕后，将完成后的代码合并到 master 主分支上
+// ------------合并分支
+// 3、功能分支的代码开发测试完毕后，将完成后的代码合并到 master 主分支上
 // 合并到哪，就必须先切换到哪，再运行 git merge 命令
     // 步骤1、先切换到 master 分支上
-        git checkout master 
-    // 步骤2、运行git merge命令，将某分支 合并到 master 分支上
+        git switch master 
+    // 步骤2、运行 git merge命令，将某分支 合并到 master 分支上。Fast forward模式
         git merge 分支名称
+        // 采用 --no-ff方式的 git merge 。即普通模式，合并后的历史有分支信息，能看出来曾经做过合并。而fast forward合并，就看不出来曾经做过合并，删除分支后，会丢掉分支信息。 
+        git merge --no-ff -m "merge with no-ff" 分支名称
 
-// 功能分支的代码合并到 master 主分支上后，还可以删除对应的功能分支：
-git branch -d 分支名称
+// ------------删除分支
+// 4、功能分支的代码合并到 master 主分支上后，可以将对应的功能分支删除掉：
+    git branch -d 分支名称
 
-// 分支合并时 遇到代码发生冲突
-// 如果在两个不同的分支中，对同一个文件进行了不同的修改，Git 就没法干净的合并它们。 此时，我们需要打开这些包含冲突的文件然后手动解决冲突。
+// 5、删除一个没有被合并过的分支，即强行删除命令
+    git branch -D 分支名称
+
+// 6、分支合并时 遇到代码发生冲突
+// 如果在两个不同的分支中，对同一个文件进行了不同的修改，Git 就没法干净的合并它们。 此时，我们需要打开这些包含冲突的文件然后手动编辑解决冲突。
     // 步骤1
-    git checkout master 
+    git switch master 
     git merge 分支名称
     // 步骤2
     git add .
     git commit -m "解决了分支合并冲突的问题"
+
+// 用带参数的 git log 命令 可以看到分支的合并情况
+    git log --graph --pretty=oneline --abbrev-commit 
+
+// 7、当手头工作还没有完成 没有提交，但现在要立刻先去修复别的 bug问题。可以先把当前工作现场 git stash “储藏”一下。修复后，再 git stash pop，恢复工作现场。
+    // “储藏”下 当前工作现场
+    git stash
+    // 切换到 工作现场的分支
+    git switch 分支名称
+    // 恢复工作现场
+    git stash pop
+
+// 可查看 工作现场存到哪去了
+git stash list
+// 可以多次 stash，恢复之前，先用 git stash list查看，然后恢复指定的stash，用命令
+git stash apply stash@{0}
+
+// 8、bug分支 通过创建新的bug分支进行修复，然后合并，最后删除
+// 首先确定要在哪个分支上修复bug，假定需要在master分支上修复，就从master创建临时分支。
+// 比如 master分支上修复了bug后，但 dev分支是早期从master分支分出来的，所以，这个bug其实在当前dev分支上也存在。只需把 bug提交的修改“复制”到 dev分支
+    // 切换到 dev 分支
+    git switch 分支名称
+    // 把 bug提交的修改“复制”到 dev分支 。比如提交修改的 commit id 为 4c805e2
+    git cherry-pick 4c805e2
 ```
 
-
-#### Git远程分支操作
-
-```js
-// 将本地分支推送到远程仓库 只在第一次推送分支需要带 -u 参数
-git push -u 远程仓库的别名 本地分支名称:远程分支名称
-// 若希望 远程分支名称 和 本地分支名称 一样，可以简化命令
-git push -u 远程仓库的别名 本地分支名称
-
-// 查看远程仓库中所有的分支列表
-git remote show 远程仓库名称
-
-// 从远程仓库中，把远程分支下载到本地仓库中，保持 本地分支和远程分支 名称相同
-git checkout 远程分支的名称
-// 从远程仓库中，把远程分支下载到本地仓库中，并把下载的本地分支进行重命名
-git checkout -b 本地分支名称 远程仓库名称/远程分支名称
-
-// 从远程仓库，拉取远程分支最新的代码下载到本地对应的分支中 从而保持代码一致
-git pull
-
-// 删除远程仓库中指定的分支
-git push 远程仓库名称 -- delete 远程分支名称
-```
-
-
-## Github
-### 开源概念
+## 使用Github
+### 概念
 一、了解开源  
 - 开源即开放源代码（Open source code），代码是公开的，任何人都可以去查看，修改和使用开源代码
 - 开源让学习变得容易，让开发越来越容易
@@ -269,6 +377,10 @@ git push 远程仓库名称 -- delete 远程分支名称
 
 注意：以上 3 个开源项目托管平台，`只能托管以 Git 管理的项目源代码`，因此，它们的名字都以 Git 开头。
 
+三、GitHub仓库  
+
+现在的情景是，你已经在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，并且让这两个仓库进行远程同步，这样，GitHub上的仓库既可以作为备份，又可以让其他人通过该仓库来协作，真是一举多得。
+
 ### 注册Github账号
 一、注册 Github 账号的流程   
 
@@ -279,24 +391,26 @@ git push 远程仓库名称 -- delete 远程分支名称
 ⑤ 点击“Create account”按钮注册新用户  
 ⑥ 登录到第三步填写的邮箱中，点击激活链接，完成注册  
 
-### Github 远程仓库的使用
-一、新建空白远程仓库
+### 创建Github远程仓库
 
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.2un68y9vq1y0.webp)
 
-二、远程仓库的两种访问方式  
 
-Github 上的远程仓库，有两种访问方式，分别是 HTTPS 和 SSH。  
+一、远程仓库的两种访问方式  
+
+1、你也许还注意到，GitHub给出的地址不止一个，还可以用https://github.com/michaelliao/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。
+
+2、Github 上的远程仓库，有两种访问方式，分别是 HTTPS 和 SSH。
+
+3、Git支持多种协议，包括https，但ssh协议速度最快。
+
 - HTTPS：`零配置`；但是每次访问仓库时，需要重复输入 Github 的账号和密码才能访问成功
 - SSH：`需要进行额外的配置`；但是配置成功后，每次访问仓库时，不需重复输入 Github 的账号和密码
 
-注意：在实际开发中，`推荐使用 SSH` 的方式访问远程仓库。
+4、在实际开发中，`推荐使用 SSH` 的方式访问远程仓库。
 
-三、基于 HTTPS 将本地仓库上传到 Github
 
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3cpx754qx6w0.webp)
-
-四、SSH key
+### 关于 SSH key
 
 1、关于SSH key   
 配置 Github 的 SSH 访问  
@@ -320,27 +434,55 @@ SSH key 由两部分组成，分别是：
 ③ 将 id_rsa.pub 文件中的内容，粘贴到 Key 对应的文本框中  
 ④ 在 Title 文本框中任意填写一个名称，来标识这个 Key 从何而来  
 
-五、检测 Github 的 SSH key 是否配置成功
+4、检测 Github 的 SSH key 是否配置成功
 
 打开 Git Bash，输入如下的命令并回车执行：
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1caeccmd39r4.webp)
 上述的命令执行成功后，可能会看到如下的提示消息：
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3x17ps40qz60.webp)
-输入 yes 之后，如果能看到类似于下面的提示消息，证明 SSH key 已经配置成功了：
+`输入 yes 回车`之后，如果能看到类似于下面的提示消息，证明 SSH key 已经配置成功了：
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3e41gaunfkm0.webp)
 
 
-六、基于 SSH 将本地仓库上传到 Github
+### 命令行
 
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.4kjlzqybe0w0.webp)
+一、先创建本地仓库，再将本地仓库 上传到 远程Github仓库：
 
+```js
+// 1、将已有的本地仓库 与 远程库关联。远程仓库名就用 origin。 MollyXu1995 为 github账号名
+git remote add origin git@github.com:MollyXu1995/本地项目仓库名.git
 
-七、将远程仓库克隆到本地  
-打开 Git Bash，输入如下的命令并回车执行：
+// 2、把本地库的所有内容推送到远程库上，即把当前分支master推送到远程。第一次推送时 加 -u 后面再推送就可以不用加了
+git push -u origin master
 
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.d5tph4hjwqo.webp)
+// 3、只要本地作了提交，就可以通过此命令，将本地master分支的最新修改推送至GitHub
+git push origin master
 
+// 4、解除 本地仓库 和 远程仓库 的关联关系
+    // 可以先查看下远程库信息
+    git remote -v
+    // 解除  origin远程库
+    git remote rm origin
 
+// 5、完全删除远程库，需要登录到GitHub，在后台页面找到删除按钮再删除。
+```
+
+二、先创建远程仓库，再将远程仓库 克隆到 本地仓库:    
+
+- 好处：若有多个人协作开发，那么每个人各自从远程克隆一份就可以了。
+
+1. 首先，登陆GitHub，创建一个新的远程仓库，比如名字叫gitskills  
+2.  勾选Initialize this repository with a README，这样GitHub会自动为我们创建一个README.md文件。创建完毕后，可以看到README.md文件   
+3. 用命令git clone克隆一个本地库
+
+```js
+// 1、将远程仓库 克隆到 本地仓库。 仓库的地址 github.com
+git clone git@github.com:MollyXu1995/远程仓库名.git
+```
+
+## 参考
+
+{{< card "https://www.liaoxuefeng.com/wiki/896043488029600" >}}        
 
 
 
