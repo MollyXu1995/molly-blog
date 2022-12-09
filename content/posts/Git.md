@@ -59,7 +59,7 @@ Git 是一个`开源的分布式版本控制系统`，是目前世界上最先�
 一、下载  
 - 在开始使用 Git 管理项目的版本之前，需要将它安装到计算机上。
 
-- 在Windows上使用Git，可以从Git官网直接下载安装程序，然后按默认选项安装即可。网址：<https://git-scm.com/downloads>
+- 在Windows上使用Git，可以从Git官网直接下载安装程序，然后按默认选项安装即可。网址：<https:#git-scm.com/downloads>
 
 - 安装完成后，在开始菜单里找到 “Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！
 
@@ -68,7 +68,7 @@ Git 是一个`开源的分布式版本控制系统`，是目前世界上最先�
 
 - 注意：如果使用了 --global 选项，那么该命令只需要运行一次，即可永久生效。
 
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.4hyd5p092lg0.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.4hyd5p092lg0.webp)
 
 三、Git 的全局配置文件  
 - 通过 git config --global user.name 和 git config --global user.email 配置的用户名和邮箱地址，会被写入到 C:/Users/用户名文件夹/.gitconfig 文件中。
@@ -78,7 +78,7 @@ Git 是一个`开源的分布式版本控制系统`，是目前世界上最先�
 
 除了使用记事本查看全局的配置信息之外，还可以运行如下的终端命令，快速的查看 Git 的全局配置信息：
 
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.pejupmzg6.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.pejupmzg6.webp)
 
 
 ### Git 的基本操作
@@ -130,7 +130,7 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 
 一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。 在这种情况下，我们可以创建一个名为 `.gitignore 的配置文件`，列出要忽略的文件的匹配模式。
 
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1ogrd69uxdkw.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1ogrd69uxdkw.webp)
 
 七、搭建Git服务器  
 
@@ -156,7 +156,7 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 分支在实际开发中的作用：  
 - 在进行多人协作开发的时候，为了防止互相干扰，提高协同开发的体验，建议每个开发者都基于分支进行项目功能的开发，例如：
 
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.5ew9kp6j8rw0.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.5ew9kp6j8rw0.webp)
 
 一、`master 主分支`
 
@@ -195,7 +195,7 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 
 
 
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.5q42eo5mzww0.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.5q42eo5mzww0.webp)
 
 
 ###  版本库
@@ -212,303 +212,303 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 
 
 git add 将工作区文件 添加到 暂存区：
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.2rotyv8hhv80.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.2rotyv8hhv80.webp)
 
 git commit 将暂存区文件 提交到 Git 仓库分支：
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.7d2y888644w0.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.7d2y888644w0.webp)
 
 图解：
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.7848l9yzeco0.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.7848l9yzeco0.webp)
 
 ## Git命令行
 
 ### 本地仓库管理
-```js
-// -----------------------
-// config 的作用域 。 local优先级高于global
+```Bash
+# -----------------------
+# config 的作用域 。 local优先级高于global
     git config --local 只对某个仓库有效
     git config --global 对当前用户所有仓库有效
 
-// --------Git配置---------------
+# --------Git配置---------------
 
-// 0、查看git版本 检查git是否安装成功
+# 0、查看git版本 检查git是否安装成功
     git --version  
-// 1、配置Git用户信息 
+# 1、配置Git用户信息 
     git config --global user.name "MollyXu1995"
     git config --global user.email "MollyXu1995@gmail.com"
-// 2、查看所有的全局配置项
+# 2、查看所有的全局配置项
     git config --global --list
-// 3、查看指定的全局配置项
+# 3、查看指定的全局配置项
     git config user.name
     git config user.email
-// 4、获得更简明的帮助 “help” 输出
+# 4、获得更简明的帮助 “help” 输出
     git config -h
-    // 在浏览器中打开帮助手册
+    # 在浏览器中打开帮助手册
     git help config
 
-// ---------建 Git仓库------------------
+# ---------建 Git仓库------------------
 
-        pwd  // pwd命令 即显示当前工作的路径
-        mkdir 文件夹名  // 创建文件夹
-        cd 文件夹名  // 移动到这个文件夹
-        ls   // 列出当前所在文件夹的内容
-        ls -ah  // 显示 .git目录 。默认 是隐藏的
+        pwd  # pwd命令 即显示当前工作的路径
+        mkdir 文件夹名  # 创建文件夹
+        cd 文件夹名  # 移动到这个文件夹
+        ls   # 列出当前所在文件夹的内容
+        ls -ah  # 显示 .git目录 。默认 是隐藏的
 
-// 1. 把已有的项目代码 纳入 Git管理
-    cd 项目文件夹名 // 移动到这个项目文件夹
-    git init  // 纳入 Git追踪管理
+# 1. 把已有的项目代码 纳入 Git管理
+    cd 项目文件夹名 # 移动到这个项目文件夹
+    git init  # 纳入 Git追踪管理
     
-// 2. 新建的项目直接用 Git管理
-    git init 项目文件夹名  // 会在当前路径下创建项目文件夹 并纳入 Git追踪管理
-    cd 项目文件夹名  // 移动到这个项目文件夹
+# 2. 新建的项目直接用 Git管理
+    git init 项目文件夹名  # 会在当前路径下创建项目文件夹 并纳入 Git追踪管理
+    cd 项目文件夹名  # 移动到这个项目文件夹
 
-// 3、把已建立的文件或文件夹放到 Git仓库 
+# 3、把已建立的文件或文件夹放到 Git仓库 
 
-    // （1）把工作区文件 放到 暂存区。 把文件或文件夹 进行Git跟踪管理。
-    // 此命令是没有返回命令信息显示的。 可反复多次使用 或 全部添加 .
+    # （1）把工作区文件 放到 暂存区。 把文件或文件夹 进行Git跟踪管理。
+    # 此命令是没有返回命令信息显示的。 可反复多次使用 或 全部添加 .
         git add 文件名
         git add 文件1 文件2 文件夹3
-        git add .   // 全部文件
+        git add .   # 全部文件
 
-    // （2）把暂存区中的文件 提交到 Git仓库。
+    # （2）把暂存区中的文件 提交到 Git仓库。
         git commit 
         git commit -m '提交描述'
 
-    // （3）相当于以上两条命令的合并
+    # （3）相当于以上两条命令的合并
         git commit -a
         git commit -a -m '提交描述'
 
-// 4、查看各文件处于什么状态  工作树是否干净
+# 4、查看各文件处于什么状态  工作树是否干净
     git status  
-    // 查看文件处于什么状态 精简方式
+    # 查看文件处于什么状态 精简方式
     git status -s
 
-// 5、告诉 Git你的 GitHub 账号。 注意是 user.username
+# 5、告诉 Git你的 GitHub 账号。 注意是 user.username
     git config --global user.username 'MollyXu1995'
 
-// 6、将本地仓库内容更新 推送到 远程仓库
+# 6、将本地仓库内容更新 推送到 远程仓库
     git push
 
-// 7、将远程仓库内容 拉到 本地仓库
+# 7、将远程仓库内容 拉到 本地仓库
     git pull
 
-// ---------------------------------------
+# ---------------------------------------
 
-// 1、查看区别
-    // 查看commit和目前工作区文件的差异
+# 1、查看区别
+    # 查看commit和目前工作区文件的差异
     git diff
-    // 查看不同分支上提交的指定文件的差异
+    # 查看不同分支上提交的指定文件的差异
     git diff temp master --文件名
 
-// 2、查看提交的历史记录 从最近到最远的提交日志 下面查看形式可以组合用
+# 2、查看提交的历史记录 从最近到最远的提交日志 下面查看形式可以组合用
     git log
-    // 只查看最新的2条提交记录 数字可改
+    # 只查看最新的2条提交记录 数字可改
     git log -n2
-    // 精简方式 展示历史记录
+    # 精简方式 展示历史记录
     git log --oneline
     git log -n3 --oneline
-    // 查看所有分支 历史记录
+    # 查看所有分支 历史记录
     git log --all 
-    // 查看某一分支 历史记录
+    # 查看某一分支 历史记录
     git log 分支名
-    // 以图形化的方式展示历史记录
+    # 以图形化的方式展示历史记录
     git log --graph
     git log --oneline --all -n4 --graph
 
-// 3、图形界面工具来查看版本历史
+# 3、图形界面工具来查看版本历史
     gitk
     
-// -------------------------------------
+# -------------------------------------
 
-// 1、从暂存区中 取消对文件的暂存
+# 1、从暂存区中 取消对文件的暂存
 git reset HEAD 要移除的文件名
-// 2、从工作区中删除文件或文件夹
+# 2、从工作区中删除文件或文件夹
 rm 文件名
-// 3、从 Git仓库中删除文件
+# 3、从 Git仓库中删除文件
 git rm 文件名
-// 4、从 工作区 和 Git 仓库中同时删除对应的文件
+# 4、从 工作区 和 Git 仓库中同时删除对应的文件
 git rm -f 文件名
-// 5、只从 Git 仓库中移除指定的文件，但保留工作区中对应的文件
+# 5、只从 Git 仓库中移除指定的文件，但保留工作区中对应的文件
 git rm --cached 文件名
-// 6、 重命名文件或文件夹
+# 6、 重命名文件或文件夹
 git mv 原名称 新名称
 
-// -------------------------------------
+# -------------------------------------
 
-// 1、暂存区的文件更改不要了，恢复成当前HEAD的工作区内容
+# 1、暂存区的文件更改不要了，恢复成当前HEAD的工作区内容
     git reset HEAD
     git reset HEAD --文件名
 
-// 2、文件 回退到之前的版本 HEAD指向哪个版本号，就相当于把当前版本定位在哪。回退到了某一版本，之前的当前版本就没有了。 此命令慎用！！
-    // 回退到 上一个版本 HEAD^
+# 2、文件 回退到之前的版本 HEAD指向哪个版本号，就相当于把当前版本定位在哪。回退到了某一版本，之前的当前版本就没有了。 此命令慎用！！
+    # 回退到 上一个版本 HEAD^
     git reset --hard HEAD^
-    // 回退到 上上一个版本 HEAD^^
+    # 回退到 上上一个版本 HEAD^^
     git reset --hard HEAD^^
-    // 回退到 往上100个版本 HEAD~100
+    # 回退到 往上100个版本 HEAD~100
     git reset --hard HEAD~100
-    // 回退到 commit id 为 1094a 的版本
+    # 回退到 commit id 为 1094a 的版本
     git reset --hard 1094a
     
-// 3、查看命令历史 以便确定要回到未来的哪个版本 即得到 commit id号 
+# 3、查看命令历史 以便确定要回到未来的哪个版本 即得到 commit id号 
     git reflog
     
-// -----------------------
+# -----------------------
 
-// 1、把文件在工作区的修改全部撤销。即让这个文件回到最近一次 git commit或git add时的状态。//无法恢复 慎重操作！// 
-    // 场景一：改后还没有放到暂存区，现在撤销修改，就回到和版本库一模一样的状态；
-    // 场景二：已经添加到暂存区后，又作了修改，现在撤销修改，就回到添加到暂存区后的状态。
-    // 场景三：添加到了暂存区时，想丢弃修改，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作
-    // 场景四：已经提交到版本库时，想要撤销本次提交，参考版本回退，不过前提是没有推送到远程库。
-    // 用版本库里的版本替换工作区的版本
+# 1、把文件在工作区的修改全部撤销。即让这个文件回到最近一次 git commit或git add时的状态。#无法恢复 慎重操作！# 
+    # 场景一：改后还没有放到暂存区，现在撤销修改，就回到和版本库一模一样的状态；
+    # 场景二：已经添加到暂存区后，又作了修改，现在撤销修改，就回到添加到暂存区后的状态。
+    # 场景三：添加到了暂存区时，想丢弃修改，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作
+    # 场景四：已经提交到版本库时，想要撤销本次提交，参考版本回退，不过前提是没有推送到远程库。
+    # 用版本库里的版本替换工作区的版本
     git checkout -- 文件名
 
-// -----------------------
+# -----------------------
 
-// 更改已经 commit提交的 描述信息message
-    // 当前分支的 最新一次 commit提交的 message修改
+# 更改已经 commit提交的 描述信息message
+    # 当前分支的 最新一次 commit提交的 message修改
     git commit --amend
-    // 交互式修改方式： 修改老旧的 commit提交的 message信息   r
+    # 交互式修改方式： 修改老旧的 commit提交的 message信息   r
     git rebase -i  其父亲的commit的id号
 
 ```
 
 ### 分支管理
-```js
-// ------------查看分支
-// 1、查看当前 Git 仓库中所有的分支列表 
-    // 分支名字前面的 * 号表示当前所处的分支
+```Bash
+# ------------查看分支
+# 1、查看当前 Git 仓库中所有的分支列表 
+    # 分支名字前面的 * 号表示当前所处的分支
     git branch
     git branch --all
 
-// ------------创建分支
-// 2、基于当前分支，创建一个新的分支    switch 也可以换成 checkout
-// 执行完创建分支的命令后，当前所指向的还是master分支，另需切换
+# ------------创建分支
+# 2、基于当前分支，创建一个新的分支    switch 也可以换成 checkout
+# 执行完创建分支的命令后，当前所指向的还是master分支，另需切换
     git branch 分支名称
-    // 切换到指定的分支上进行开发
+    # 切换到指定的分支上进行开发
     git switch 分支名称 
-// 创建指定名称的新分支，并立即切换到新分支上开发。相当于上面两条指令的合并 
+# 创建指定名称的新分支，并立即切换到新分支上开发。相当于上面两条指令的合并 
     git switch -c 分支名称
-// 基于 某分支上 创建新分支 并切换到新分支上
+# 基于 某分支上 创建新分支 并切换到新分支上
     git switch -b 新分支名称 某分支名
 
-// 重新命名目前所在的 分支名
+# 重新命名目前所在的 分支名
     git branch -m 原分支名 新分支名
 
-// ------------合并分支
-// 3、功能分支的代码开发测试完毕后，将完成后的代码合并到 master 主分支上
-// 合并到哪，就必须先切换到哪，再运行 git merge 命令
-    // 步骤1、先切换到 master 分支上
+# ------------合并分支
+# 3、功能分支的代码开发测试完毕后，将完成后的代码合并到 master 主分支上
+# 合并到哪，就必须先切换到哪，再运行 git merge 命令
+    # 步骤1、先切换到 master 分支上
         git switch master 
-    // 步骤2、运行 git merge命令，将某分支 合并到 master 分支上。Fast forward模式
+    # 步骤2、运行 git merge命令，将某分支 合并到 master 分支上。Fast forward模式
         git merge 分支名称
-        // 采用 --no-ff方式的 git merge 。即普通模式，合并后的历史有分支信息，能看出来曾经做过合并。而fast forward合并，就看不出来曾经做过合并，删除分支后，会丢掉分支信息。 
+        # 采用 --no-ff方式的 git merge 。即普通模式，合并后的历史有分支信息，能看出来曾经做过合并。而fast forward合并，就看不出来曾经做过合并，删除分支后，会丢掉分支信息。 
         git merge --no-ff -m "merge with no-ff" 分支名称
 
-// ------------删除分支
-// 4、功能分支的代码合并到 master 主分支上后，可以将对应的功能分支删除掉：
+# ------------删除分支
+# 4、功能分支的代码合并到 master 主分支上后，可以将对应的功能分支删除掉：
     git branch -d 分支名称
 
-// 5、删除一个没有被合并过的分支，即强行删除命令
+# 5、删除一个没有被合并过的分支，即强行删除命令
     git branch -D 分支名称
 
-// 6、分支合并时 遇到代码发生冲突
-// 如果在两个不同的分支中，对同一个文件进行了不同的修改，Git 就没法干净的合并它们。 此时，我们需要打开这些包含冲突的文件然后手动编辑解决冲突。
-    // 步骤1
+# 6、分支合并时 遇到代码发生冲突
+# 如果在两个不同的分支中，对同一个文件进行了不同的修改，Git 就没法干净的合并它们。 此时，我们需要打开这些包含冲突的文件然后手动编辑解决冲突。
+    # 步骤1
     git switch master 
     git merge 分支名称
-    // 步骤2
+    # 步骤2
     git add .
     git commit -m "解决了分支合并冲突的问题"
 
-// 用带参数的 git log 命令 可以看到分支的合并情况
+# 用带参数的 git log 命令 可以看到分支的合并情况
     git log --graph --pretty=oneline --abbrev-commit 
 
-// 7、当手头工作还没有完成 没有提交，但现在要立刻先去修复别的 bug问题。可以先把当前工作现场 git stash “储藏”一下。修复后，再 git stash pop，恢复工作现场。
-    // “储藏”下 当前工作现场
+# 7、当手头工作还没有完成 没有提交，但现在要立刻先去修复别的 bug问题。可以先把当前工作现场 git stash “储藏”一下。修复后，再 git stash pop，恢复工作现场。
+    # “储藏”下 当前工作现场
     git stash
-    // 切换到 工作现场的分支
+    # 切换到 工作现场的分支
     git switch 分支名称
-    // 恢复工作现场
+    # 恢复工作现场
     git stash pop
 
-// 可查看 工作现场存到哪去了
+# 可查看 工作现场存到哪去了
 git stash list
-// 可以多次 stash，恢复之前，先用 git stash list查看，然后恢复指定的stash，用命令
+# 可以多次 stash，恢复之前，先用 git stash list查看，然后恢复指定的stash，用命令
 git stash apply stash@{0}
 
-// 8、bug分支 通过创建新的bug分支进行修复，然后合并，最后删除
-// 首先确定要在哪个分支上修复bug，假定需要在master分支上修复，就从master创建临时分支。
-// 比如 master分支上修复了bug后，但 dev分支是早期从master分支分出来的，所以，这个bug其实在当前dev分支上也存在。只需把 bug提交的修改“复制”到 dev分支
-    // 切换到 dev 分支
+# 8、bug分支 通过创建新的bug分支进行修复，然后合并，最后删除
+# 首先确定要在哪个分支上修复bug，假定需要在master分支上修复，就从master创建临时分支。
+# 比如 master分支上修复了bug后，但 dev分支是早期从master分支分出来的，所以，这个bug其实在当前dev分支上也存在。只需把 bug提交的修改“复制”到 dev分支
+    # 切换到 dev 分支
     git switch 分支名称
-    // 把 bug提交的修改“复制”到 dev分支 。比如提交修改的 commit id 为 4c805e2
+    # 把 bug提交的修改“复制”到 dev分支 。比如提交修改的 commit id 为 4c805e2
     git cherry-pick 4c805e2
 
 ```
 
 ### 远程仓库管理
 以下使用 SSH 协议：
-```js
-//-----------------------------------
+```Bash
+#-----------------------------------
 
-// 先创建本地仓库，再将本地仓库 上传到 远程Github仓库
+# 先创建本地仓库，再将本地仓库 上传到 远程Github仓库
 
-// 0、先创建 Github远程项目仓库 命名 和电脑上 本地仓库名一样
+# 0、先创建 Github远程项目仓库 命名 和电脑上 本地仓库名一样
 
-// 1、将已有的本地仓库 与 远程库关联。
-// 本地链接远程的方式的名称 通常就叫 origin。 MollyXu1995 为 github账号名
+# 1、将已有的本地仓库 与 远程库关联。
+# 本地链接远程的方式的名称 通常就叫 origin。 MollyXu1995 为 github账号名
 git remote add origin git@github.com:MollyXu1995/本地项目仓库名.git
 
-// 2、把本地库的所有内容推送到远程库上，即把当前分支master推送到远程。第一次推送时 加 -u 后面再推送就可以不用加了
+# 2、把本地库的所有内容推送到远程库上，即把当前分支master推送到远程。第一次推送时 加 -u 后面再推送就可以不用加了
 git push -u origin master
 
-// 3、只要本地作了提交，就可以通过此命令，将本地master分支的最新修改推送至GitHub
+# 3、只要本地作了提交，就可以通过此命令，将本地master分支的最新修改推送至GitHub
 git push origin master 
 
-// 4、可以先查看下远程库信息 有哪些远端连接
+# 4、可以先查看下远程库信息 有哪些远端连接
     git remote -v
 
-// 5、解除 本地仓库 和 远程仓库 的关联关系
-    // 解除  origin远程库
+# 5、解除 本地仓库 和 远程仓库 的关联关系
+    # 解除  origin远程库
     git remote rm origin
 
-// 6、完全删除远程库，需要登录到GitHub，在后台页面找到删除按钮再删除。
+# 6、完全删除远程库，需要登录到GitHub，在后台页面找到删除按钮再删除。
 
-//-----------------------------------
+#-----------------------------------
 
-// 先创建远程仓库，再将远程仓库 克隆到 本地仓库：
+# 先创建远程仓库，再将远程仓库 克隆到 本地仓库：
 
-// 0、将别人的 github仓库，Create fork复制到自己的github账号下
-        // 到别人github仓库下，页面上点击右上方的 fork 按鈕，你的账号中就会出现一份 仓库副本。右侧栏的地址就是你 fork 仓库的 GitHub地址。
+# 0、将别人的 github仓库，Create fork复制到自己的github账号下
+        # 到别人github仓库下，页面上点击右上方的 fork 按鈕，你的账号中就会出现一份 仓库副本。右侧栏的地址就是你 fork 仓库的 GitHub地址。
 
-// 1、将自己账号 远程仓库 克隆到 本地仓库。
-// clone 到本地，会自动在本地建立一个文件夹，不需要自己建。并自动 与 自己的远端仓库相连接。
-// 但注意终端命令位置路径，别移动到其它git仓库里了
+# 1、将自己账号 远程仓库 克隆到 本地仓库。
+# clone 到本地，会自动在本地建立一个文件夹，不需要自己建。并自动 与 自己的远端仓库相连接。
+# 但注意终端命令位置路径，别移动到其它git仓库里了
 git clone git@github.com:MollyXu1995/远程仓库名.git
-cd 本地仓库名  // 移动到本地仓库
+cd 本地仓库名  # 移动到本地仓库
 
-// 2、连接别人的 github远端仓库，这样自己的本地仓库 才会随着别人原始仓库的内容变化而更新
-// 本地链接别人远程的方式的名称，通常都叫 upstream
+# 2、连接别人的 github远端仓库，这样自己的本地仓库 才会随着别人原始仓库的内容变化而更新
+# 本地链接别人远程的方式的名称，通常都叫 upstream
 git remote add upstream git@github.com:别人github账号名/本地项目仓库名.git
 
-// 3、检查所有 remotes 指向地址信息，是否都设定正确 
+# 3、检查所有 remotes 指向地址信息，是否都设定正确 
 git remote -v
 
-// 4、可修改地址
+# 4、可修改地址
 git remote set-url 
 ```
 
 下图是一个本地库连接两个远程。正常工作中，大家多个本地库，链接同一个远程库来工作。
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.3q4lc7cu12c0.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.3q4lc7cu12c0.webp)
 
 本地和远端 连接正常，就是得有一个fetch，一个push。
 - fetch 代表拉，从远端拉到本地
 - push 代表推送，从本地推送到远端
 
-![29d1afc08f8f526190a094fff785476](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/29d1afc08f8f526190a094fff785476.2qmbzmobjic0.webp)  
+![29d1afc08f8f526190a094fff785476](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/29d1afc08f8f526190a094fff785476.2qmbzmobjic0.webp)  
 
 
-![248e7eb9a5596bc7076d6697c22a5d8](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/248e7eb9a5596bc7076d6697c22a5d8.32vxzk890zi0.webp)
+![248e7eb9a5596bc7076d6697c22a5d8](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/248e7eb9a5596bc7076d6697c22a5d8.32vxzk890zi0.webp)
 
 
 ## 使用Github
@@ -533,7 +533,7 @@ git remote set-url
 ### 注册Github账号
 一、注册 Github 账号的流程   
 
-① 访问 Github 的官网首页 https://github.com/  
+① 访问 Github 的官网首页 https:#github.com/  
 ② 点击“Sign up”按钮跳转到注册页面  
 ③ 填写可用的用户名、邮箱、密码  
 ④ 通过点击箭头的形式，将验证图片摆正  
@@ -549,12 +549,12 @@ git remote set-url
 - 也不要修改 .gitignore 和 license 的设定，保留原先「none」 的设定就好。
 - 按下「create repository」！
 
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.2un68y9vq1y0.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.2un68y9vq1y0.webp)
 
 
 一、远程仓库的两种访问方式  
 
-1、你也许还注意到，GitHub给出的地址不止一个，还可以用https://github.com/michaelliao/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。
+1、你也许还注意到，GitHub给出的地址不止一个，还可以用https:#github.com/michaelliao/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git:#使用ssh，但也可以使用https等其他协议。
 
 2、Github 上的远程仓库，有两种访问方式，分别是 HTTPS 和 SSH。
 
@@ -593,18 +593,18 @@ SSH key 由两部分组成，分别是：
 4、检测 Github 的 SSH key 是否配置成功
 
 打开 Git Bash，输入如下的命令并回车执行：
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1caeccmd39r4.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1caeccmd39r4.webp)
 上述的命令执行成功后，可能会看到如下的提示消息：
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3x17ps40qz60.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3x17ps40qz60.webp)
 `输入 yes 回车`之后，如果能看到类似于下面的提示消息，证明 SSH key 已经配置成功了：
-![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3e41gaunfkm0.webp)
+![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3e41gaunfkm0.webp)
 
 
 ## 参考
 
-{{< card "https://www.liaoxuefeng.com/wiki/896043488029600" >}}   
-     
-{{< card "https://humble-blog.vercel.app/git/" >}}        
+{{< card "https:#www.liaoxuefeng.com/wiki/896043488029600" >}}   
+
+{{< card "https:#humble-blog.vercel.app/git/" >}}        
 
 
 
