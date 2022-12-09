@@ -169,7 +169,7 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 - 功能分支指的是专门`用来开发新功能的分支`，它是临时从 master 主分支上分叉出来的，当新功能开发且测试完毕后，最终需要合并到 master 主分支上。
 
 
-三、分支管理策略  
+三、`分支管理策略` 
 在实际开发中，我们应该按照几个基本原则进行分支管理：  
 
 - 首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；
@@ -533,7 +533,7 @@ git remote set-url
 ### 注册Github账号
 一、注册 Github 账号的流程   
 
-① 访问 Github 的官网首页 https:#github.com/  
+① 访问 Github 的官网首页 <https://github.com/>  
 ② 点击“Sign up”按钮跳转到注册页面  
 ③ 填写可用的用户名、邮箱、密码  
 ④ 通过点击箭头的形式，将验证图片摆正  
@@ -554,7 +554,7 @@ git remote set-url
 
 一、远程仓库的两种访问方式  
 
-1、你也许还注意到，GitHub给出的地址不止一个，还可以用https:#github.com/michaelliao/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git:#使用ssh，但也可以使用https等其他协议。
+1、你也许还注意到，GitHub给出的地址不止一个，还可以用https://github.com/michaelliao/gitskills.git 这样的地址。实际上，Git支持多种协议，默认的使用ssh，但也可以使用https等其他协议。
 
 2、Github 上的远程仓库，有两种访问方式，分别是 HTTPS 和 SSH。
 
