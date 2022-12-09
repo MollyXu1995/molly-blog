@@ -600,6 +600,14 @@ SSH key 由两部分组成，分别是：
 ![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3e41gaunfkm0.webp)
 
 
+### Github 搜索项目
+如何利用Github 高效搜索你感兴趣的开源项目
+- 搜索框内，搜索 git学习资料的项目 为例：
+    - git 学习 资料 in:readme stars:>1000
+
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.49gtxwy1ay00.webp)
+
+
 ## 参考
 
 {{< card "https://www.liaoxuefeng.com/wiki/896043488029600" >}}   
