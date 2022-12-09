@@ -59,7 +59,7 @@ Git 是一个`开源的分布式版本控制系统`，是目前世界上最先�
 一、下载  
 - 在开始使用 Git 管理项目的版本之前，需要将它安装到计算机上。
 
-- 在Windows上使用Git，可以从Git官网直接下载安装程序，然后按默认选项安装即可。网址：<https:#git-scm.com/downloads>
+- 在Windows上使用Git，可以从Git官网直接下载安装程序，然后按默认选项安装即可。网址：<https://git-scm.com/downloads>
 
 - 安装完成后，在开始菜单里找到 “Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！
 
@@ -68,7 +68,7 @@ Git 是一个`开源的分布式版本控制系统`，是目前世界上最先�
 
 - 注意：如果使用了 --global 选项，那么该命令只需要运行一次，即可永久生效。
 
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.4hyd5p092lg0.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.4hyd5p092lg0.webp)
 
 三、Git 的全局配置文件  
 - 通过 git config --global user.name 和 git config --global user.email 配置的用户名和邮箱地址，会被写入到 C:/Users/用户名文件夹/.gitconfig 文件中。
@@ -78,7 +78,7 @@ Git 是一个`开源的分布式版本控制系统`，是目前世界上最先�
 
 除了使用记事本查看全局的配置信息之外，还可以运行如下的终端命令，快速的查看 Git 的全局配置信息：
 
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.pejupmzg6.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.pejupmzg6.webp)
 
 
 ### Git 的基本操作
@@ -130,7 +130,7 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 
 一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。 在这种情况下，我们可以创建一个名为 `.gitignore 的配置文件`，列出要忽略的文件的匹配模式。
 
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1ogrd69uxdkw.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1ogrd69uxdkw.webp)
 
 七、搭建Git服务器  
 
@@ -156,7 +156,7 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 分支在实际开发中的作用：  
 - 在进行多人协作开发的时候，为了防止互相干扰，提高协同开发的体验，建议每个开发者都基于分支进行项目功能的开发，例如：
 
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.5ew9kp6j8rw0.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.5ew9kp6j8rw0.webp)
 
 一、`master 主分支`
 
@@ -195,7 +195,7 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 
 
 
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.5q42eo5mzww0.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.5q42eo5mzww0.webp)
 
 
 ###  版本库
@@ -212,13 +212,13 @@ Git 操作的终极结果：让工作区中的文件都处于“未修改”的�
 
 
 git add 将工作区文件 添加到 暂存区：
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.2rotyv8hhv80.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.2rotyv8hhv80.webp)
 
 git commit 将暂存区文件 提交到 Git 仓库分支：
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.7d2y888644w0.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221122/image.7d2y888644w0.webp)
 
 图解：
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.7848l9yzeco0.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.7848l9yzeco0.webp)
 
 ## Git命令行
 
@@ -499,16 +499,16 @@ git remote set-url
 ```
 
 下图是一个本地库连接两个远程。正常工作中，大家多个本地库，链接同一个远程库来工作。
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.3q4lc7cu12c0.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/image.3q4lc7cu12c0.webp)
 
 本地和远端 连接正常，就是得有一个fetch，一个push。
 - fetch 代表拉，从远端拉到本地
 - push 代表推送，从本地推送到远端
 
-![29d1afc08f8f526190a094fff785476](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/29d1afc08f8f526190a094fff785476.2qmbzmobjic0.webp)  
+![29d1afc08f8f526190a094fff785476](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/29d1afc08f8f526190a094fff785476.2qmbzmobjic0.webp)  
 
 
-![248e7eb9a5596bc7076d6697c22a5d8](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/248e7eb9a5596bc7076d6697c22a5d8.32vxzk890zi0.webp)
+![248e7eb9a5596bc7076d6697c22a5d8](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221207/248e7eb9a5596bc7076d6697c22a5d8.32vxzk890zi0.webp)
 
 
 ## 使用Github
@@ -549,7 +549,7 @@ git remote set-url
 - 也不要修改 .gitignore 和 license 的设定，保留原先「none」 的设定就好。
 - 按下「create repository」！
 
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.2un68y9vq1y0.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.2un68y9vq1y0.webp)
 
 
 一、远程仓库的两种访问方式  
@@ -593,18 +593,18 @@ SSH key 由两部分组成，分别是：
 4、检测 Github 的 SSH key 是否配置成功
 
 打开 Git Bash，输入如下的命令并回车执行：
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1caeccmd39r4.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.1caeccmd39r4.webp)
 上述的命令执行成功后，可能会看到如下的提示消息：
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3x17ps40qz60.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3x17ps40qz60.webp)
 `输入 yes 回车`之后，如果能看到类似于下面的提示消息，证明 SSH key 已经配置成功了：
-![image](https:#cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3e41gaunfkm0.webp)
+![image](https://cdn.staticaly.com/gh/MollyXu1995/molly-picx@master/20221108/image.3e41gaunfkm0.webp)
 
 
 ## 参考
 
-{{< card "https:#www.liaoxuefeng.com/wiki/896043488029600" >}}   
+{{< card "https://www.liaoxuefeng.com/wiki/896043488029600" >}}   
 
-{{< card "https:#humble-blog.vercel.app/git/" >}}        
+{{< card "https://humble-blog.vercel.app/git/" >}}        
 
 
 
