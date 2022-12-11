@@ -15,6 +15,7 @@ series: ['前端学习之旅']
 
 二、什么是 Node.js
 - `Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境`。
+- Node.js使得JavaScript可以在非浏览器环境下运行。
 - Node.js 的官网地址： <https://nodejs.org/zh-cn/>
 
 三、Node.js 中的 JavaScript 运行环境  
@@ -41,8 +42,9 @@ series: ['前端学习之旅']
 
 ### Node.js 环境的下载安装
 
-一、安装  
+一、安装   
 
+方式一：  
 1、希望通过 Node.js 来运行 Javascript 代码，则必须在计算机上安装 Node.js 环境才行。  
 
 2、官网首页 <https://nodejs.org/en/>。点击绿色按钮 下载所需的版本 双击直接安装即可。
@@ -51,7 +53,11 @@ series: ['前端学习之旅']
 
 4、打开终端，在终端输入命令 `node –v`后，按下回车键，即可查看已安装的 Node.js 的版本号。
 
-5、继续在命令提示符输入node，此刻你将进入Node.js的交互环境。在交互环境下，你可以输入任意JavaScript语句，例如100+200，回车后将得到输出结果。要退出Node.js环境，连按两次Ctrl+C。
+5、继续在命令提示符输入node，此刻你将进入Node.js的交互环境。在交互环境下，你可以输入任意JavaScript语句，例如100+200，回车后将得到输出结果。`要退出Node.js环境，连按两次Ctrl+C`。
+
+方式二：   
+通过`scoop`命令行 安装
+
 
 二、区分 LTS 版本和 Current 版本的不同
 
@@ -81,33 +87,36 @@ series: ['前端学习之旅']
 
 六、MySQL数据库与身份认证
 
-## npm与包
+## npm
 ### 概念
-#### 什么是包、npm
+一、 什么是包、npm
+
 - `Node.js 中的第三方模块又叫做包`。就像电脑和计算机指的是相同的东西，第三方模块和包指的是同一个概念，只不过叫法不同。包是由第三方个人或团队开发出来的，免费供所有人使用。包是基于内置模块封装出来的，提供了更高级、更方便的 API，极大的提高了开发效率。
 
 - `npm其实是Node.js的包管理工具`（Node Package Manager）。是国外有一家叫 npm, Inc.公司提供的，它是全球最大的包共享平台
 
 - 其实npm包管理工具，已经在Node.js安装的时候顺带装好了。我们在终端输入`npm -v`，即可查看已安装的 npm 包管理工具的版本号。
 
-#### 包的分类
+- 主流的前端包管理工具有`npm、yarn、pnpm`、以及国内的镜像cnpm、tyarn 等，这是包管理器都是基于node.js
+
+二、包的分类
 
 使用 npm 包管理工具下载的包，共分为两大类：
 
-一、项目包
-- 那些被安装到项目的 node_modules 目录中的包，都是项目包。
+1、项目包
+- 那些被`安装到项目的包，都在node_modules 目录下`。
 - 项目包又分为两类：
     - 开发依赖包（被记录到 devDependencies 节点中的包，只在开发期间会用到）
     - 核心依赖包（被记录到 dependencies 节点中的包，在开发期间和项目上线之后都会用到）
 
-二、全局包
-- 在执行 npm install 命令时，如果提供了 -g 参数，则会把包安装为全局包。
+2、全局包
+- 在执行 npm install 命令时，如果提供了 -g 参数，则会把包安装为全局包，即下载命令行软件。
 - 全局包会被安装到 C:\Users\用户目录\AppData\Roaming\npm\node_modules 目录下。
 - 注意：
     - 只有工具性质的包，才有全局安装的必要性。因为它们提供了好用的终端命令。
     - 判断某个包是否需要全局安装后才能使用，可以参考官方提供的使用说明即可。
 
-#### 规范的包结构
+三、 规范的包结构
 
 1、一个规范的包，它的组成结构，必须符合以下 3 点要求：
 - 包必须以单独的目录而存在
@@ -119,15 +128,15 @@ series: ['前端学习之旅']
 
 
 ### 装包  
-一、可以使用npm包管理工具，从服务器把需要的包下载到本地使用。    
-- 从 <https://www.npmjs.com/> 网站上搜索自己所需要的包  
-- 从 <https://registry.npmjs.org/> 服务器上下载自己需要的包
+一、可以使用npm包管理工具，从服务器把需要的包下载到本地使用。   
+- 谷歌浏览器中搜索`npm 或node.js 加 想要实现的功能描述`获取包名
+- 从 <https://www.npmjs.com/> 网站上搜索自己所获取所需的包名  
 
 二、在项目中安装 包 的命令
 
-```bash
+```Bash
 # 1、一次性安装所有的包
-    npm install
+    npm install 
     # 可简写为：
     npm i
 
@@ -141,24 +150,25 @@ series: ['前端学习之旅']
     # 比如：npm i moment@2.22.2 
 
 # 4、卸载指定的包
-npm uninstall 包的完整名称
+    npm uninstall 包的完整名称
+
+# 5、在当前项目根目录下，创建 package.json 文件
+    npm init
+
+# 6、更新包
+    npm update request
+
+# 7、查看项目中已安装的包
+    npm list
+
+# 8、搜索可用的包
+    npm search 包名
 ```
 
-三、初次装包后多了哪些文件
-
-- 初次装包完成后，在项目文件夹下多一个叫做 `node_modules 的文件夹`和 `package-lock.json 的配置文件`。
-
-- 其中：  
-    - node_modules 文件夹用来存放所有已安装到项目中的包。require() 导入第三方包时，就是从这个目录中查找并加载包。
-    - package-lock.json 配置文件用来记录 node_modules 目录下的每一个包的下载信息，例如包的名字、版本号、下载地址等。
-
-- 注意：程序员不要手动修改 node_modules 或 package-lock.json 文件中的任何代码，npm 包管理工具会自动维护它们。
-
-
-四、 npm 初体验
-
-案例：格式化时间
+npm 初体验：
 ```js
+// 案例：格式化时间  
+
 // 使用 npm 包管理工具，在项目中安装 格式化时间的包 moment
 // 使用 require() 导入包。导入的名称，就是装包时候的名称
 const moment = require('moment')
@@ -167,7 +177,18 @@ const dt = moment().format('YYYY-MM-DD HH:mm:ss')
 console.log(dt) // 输出 2020-01-12 17：23：48
 ```
 
-### 包管理配置文件
+三、初次装包后多了哪些文件
+
+- 初次装包完成后，在项目文件夹下多一个叫做 `node_modules 的文件夹`和 `package-lock.json 的配置文件`。
+
+- 其中：  
+    - `node_modules 文件夹用来存放所有已安装到项目中的包`。require() 导入第三方包时，就是从这个目录中查找并加载包。
+    - `package-lock.json 配置文件用来记录 node_modules 目录下的每一个包的下载信息`，例如包的名字、版本号、下载地址等。
+
+- 注意：程序员不要手动修改 node_modules 或 package-lock.json 文件中的任何代码，npm 包管理工具会自动维护它们。
+
+
+### 包管理的配置文件
 
 1、npm 规定，在`包的顶级目录中`，必须提供一个叫做 `package.json 的包管理配置文件`。用来记录与项目有关的一些配置信息。例如：  
 
@@ -183,10 +204,13 @@ console.log(dt) // 输出 2020-01-12 17：23：48
 - 注意：今后在项目开发中，一定要`把 node_modules 文件夹`，`添加到 .gitignore 忽略文件中`。
 
 3、`快速创建 package.json`
+- 执行这个命令后，npm 会提示您输入一些信息，用于初始化 package.json 文件。例如，会提示您，输入项目的名称、版本、描述、入口文件、测试命令、Git 仓库地址、关键字等信息。
+- 您可以根据提示依次输入信息，或者直接按回车键跳过。
+- 所有信息输入完成后，npm 会根据您输入的信息生成 package.json 文件。
 
 ```bash
 # 在执行命令时所处的目录中，快速创建 package.json 这个包管理配置文件
-npm init -y
+npm init
 
 # 运行 npm install 命令安装包的时候，npm 包管理工具会自动把包的名称和版本号，记录到 package.json 中
 # package.json 文件中，有一个 dependencies 节点，专门用来记录您使用 npm install 命令安装了哪些包。
